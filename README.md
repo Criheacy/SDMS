@@ -1,2 +1,5 @@
-# SDMS
-Database Course Design Project - Student Dormitory Management System (SDMS)
+## 学生宿舍管理系统
+
+> 由 何凯琦 许凯歌 罗皓文 维护
+
+数据库系统 - 期末课程设计

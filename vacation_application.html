@@ -134,17 +134,19 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
-                                <input type="text" class="textbox textbox_295" placeholder="学生学号...">
+                                <input type="text" id="studentIDValue" class="textbox textbox_295"
+                                    placeholder="学生学号...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">学生姓名：</span>
-                                <input type="text" class="textbox" placeholder="学生姓名...">
+                                <input type="text" id="studentNameValue" class="textbox"
+                                    placeholder="学生姓名...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">假期类型：</span>
-                                <select class="select">
+                                <select class="select" id="vacationTypeValue">
                                     <option>寒假</option>
                                     <option>暑假</option>
                                     <option>法定节假日</option>
@@ -154,23 +156,58 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">假期开始日期：</span>
-                                <input type="date" id="txtDate" class="textbox" placeholder="离开日期...">
+                                <input type="date" id="vacationStartingDateValue"
+                                    class="textbox" placeholder="离开日期...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">假期结束日期：</span>
-                                <input type="date" id="txtDate" class="textbox" placeholder="结束日期...">
+                                <input type="date" id="vacationEndingDateValue"
+                                    class="textbox" placeholder="结束日期...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
-                                <textarea rows="5" cols="80" class="textbox"
+                                <textarea rows="5" cols="80" id="noteValue" class="textbox"
                                     placeholder="请输入备注(最多可输入1000字)..."></textarea>
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" class="link_btn">
+                                <input id="vacation_application_submit" type="submit" class="link_btn">
+                                <script>
+                                    document.getElementById("vacation_application_submit").onclick = function()
+                                    {
+                                        var httpRequest = new XMLHttpRequest();
+                                        httpRequest.open('POST', 'https://localhost:8080/', true);
+                                        httpRequest.setRequestHeader("Content-type", "application/json");
+
+                                        var selectedIndex = document.getElementById("vacationTypeValue").selectedIndex
+                                        const obj =
+                                        {
+                                            "studentID": document.getElementById("studentIDValue").value,
+                                            "studentName": document.getElementById("studentNameValue").value,
+                                            "vacationType": document.getElementById("vacationTypeValue").options[selectedIndex].value,
+                                            "vacationStartingDate": document.getElementById("vacationStartingDateValue").value,
+                                            "vacationEndingDate": document.getElementById("vacationEndingDateValue").value,
+                                            "noteValue": document.getElementById("noteValue").value,
+                                        };
+                                        alert(obj);
+                                        console.log(obj);
+
+                                        httpRequest.send(JSON.stringify(obj));
+
+                                        alert(JSON.stringify(obj));
+                                        console.log(JSON.stringify(obj));
+                                    }
+
+                                    httpRequest.onreadystatechange = function () {
+                                        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                                            var json = httpRequest.responseText;
+                                            console.log(json);
+                                        }
+                                    };
+                                </script>
                             </li>
                         </ul>
                     </section>

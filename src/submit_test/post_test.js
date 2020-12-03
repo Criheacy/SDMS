@@ -1,7 +1,7 @@
 document.getElementById("vacation_application_submit").onclick = function() 
 {
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open('POST', 'https://localhost:8080/', true);
+    httpRequest.open('POST', 'http://localhost:8080/', true);
     httpRequest.setRequestHeader("Content-type", "application/json");
     const obj =
     {

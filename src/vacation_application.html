@@ -175,39 +175,7 @@
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
                                 <input id="vacation_application_submit" type="submit" class="link_btn">
-                                <script>
-                                    document.getElementById("vacation_application_submit").onclick = function()
-                                    {
-                                        var httpRequest = new XMLHttpRequest();
-                                        httpRequest.open('POST', 'https://localhost:8080/', true);
-                                        httpRequest.setRequestHeader("Content-type", "application/json");
-
-                                        var selectedIndex = document.getElementById("vacationTypeValue").selectedIndex
-                                        const obj =
-                                        {
-                                            "studentID": document.getElementById("studentIDValue").value,
-                                            "studentName": document.getElementById("studentNameValue").value,
-                                            "vacationType": document.getElementById("vacationTypeValue").options[selectedIndex].value,
-                                            "vacationStartingDate": document.getElementById("vacationStartingDateValue").value,
-                                            "vacationEndingDate": document.getElementById("vacationEndingDateValue").value,
-                                            "noteValue": document.getElementById("noteValue").value,
-                                        };
-                                        alert(obj);
-                                        console.log(obj);
-
-                                        httpRequest.send(JSON.stringify(obj));
-
-                                        alert(JSON.stringify(obj));
-                                        console.log(JSON.stringify(obj));
-                                    }
-
-                                    httpRequest.onreadystatechange = function () {
-                                        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-                                            var json = httpRequest.responseText;
-                                            console.log(json);
-                                        }
-                                    };
-                                </script>
+                                <script src="submit_test/post_test.js"></script>
                             </li>
                         </ul>
                     </section>

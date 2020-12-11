@@ -10,7 +10,7 @@
 | EditStuInfoPriv   | Char     | 1            | NO         |              |
 | EditAdminInfoPriv | Char     | 1            | NO         |              |
 | EditSelfInfoPriv  | Char     | 1            | NO         |              |
-| UserPwd           | Varchar  | 20           | NO         |              |
+| UserPwd           | Varchar  | 30           | NO         |              |
 | PwdLastChanged    | DateTime |              | YES        |              |
 | Banned            | Char     | 1            | NO         |              |
 | Locked            | Char     | 1            | NO         |              |

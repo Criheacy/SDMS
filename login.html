@@ -22,6 +22,7 @@
   <script src="./login_files/jquery.js"></script>
   <script src="./login_files/verificationNumbers.js"></script>
   <script src="./login_files/Particleground.js"></script>
+  <script src="./login_files/Login.js/"></script>
   <script>
     $(document).ready(function () {
       //粒子背景特效
@@ -33,7 +34,11 @@
       createCode();
       //测试提交，对接程序删除即可
       $(".submit_btn").click(function () {
-        location.href = "index.html";
+        if (validate())
+        {
+          alert("Valid Code\n");
+          login($(".userNameText").value, $(".userPwdText").value);
+        }
       });
     });
   </script>
@@ -46,10 +51,10 @@
       <em>Student Dormitory Management System</em>
     </dt>
     <dd class="user_icon">
-      <input type="text" placeholder="账号" class="login_txtbx">
+      <input id="userNameText" type="text" placeholder="账号" class="login_txtbx">
     </dd>
     <dd class="pwd_icon">
-      <input type="password" placeholder="密码" class="login_txtbx">
+      <input id="userPwdText" type="password" placeholder="密码" class="login_txtbx">
     </dd>
     <dd class="val_icon">
       <div class="checkcode">

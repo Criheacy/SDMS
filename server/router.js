@@ -1,6 +1,4 @@
 const express = require('express');
-const querystring = require('querystring');
-const bodyParser = require('body-parser');
 const app = express();
 
 //设置允许跨域访问该服务.
@@ -15,26 +13,6 @@ app.all('*', function (req, res, next) {
     else
         next();
 });
-
-/*
-app.use(bodyParser.json({ limit: '1mb' }));  //body-parser 解析json格式数据
-app.use(bodyParser.urlencoded({            //此项必须在 bodyParser.json 下面,为参数编码
-    extended: true
-}));
-*/
-/*
-app.on('', function (req, res) {
-    let postParams = '';
-    req.on('data', (params) => {
-        postParams += params;
-    })
-
-    req.on('end', () => {
-        let userData = querystring.parse(postParams);
-        console.log(userData);
-    })
-});
-*/
 
 app.post('', function (req, res) {
     var params;

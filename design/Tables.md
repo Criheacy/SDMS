@@ -156,18 +156,18 @@
 
 1.索引：
 
-|      | 表名                                                        | 主键               | 外键                      |
-| ---- | ----------------------------------------------------------- | ------------------ | ------------------------- |
-| 1    | Student information                                         | StudentID          | StudentID                 |
-| 2    | Student dormitory information                               | StudentID          | StudentID、dormitoryID    |
-| 3    | Dormitory table                                             | DormitoryID        | dormitoryID、buildingID   |
-| 4    | Dormitory supporting rooms/facilities                       | RoomID、buildingID | BuildingID                |
-| 5    | Student departure/enrollment  registration                  | StudentID          | StudentID                 |
-| 6    | Student temporary leave registration form                   | StudentID          | StudentID                 |
-| 7    | Registration form for  students to change their dormitories | StudentID          | StudentID                 |
-| 8    | Registration form of  foreign visitors                      | Name               |                           |
-| 9    | Account management table                                    | UserID             |                           |
-| 10   | Dormitory inspection and  scoring record                    | InspectionID       | DormitoryID、inspectionID |
-| 11   | Dormitory checklist                                         | DormitoryID        | InspectionID              |
-| 12   | Dormitory reward and  punishment record                     | DormitoryID        | DormitoryID               |
-| 13   | Dormitory repair record                                     | DormitoryID        | DormitoryID               |
+|      | 表名                                                       | 主键               | 外键                      |
+| ---- | ---------------------------------------------------------- | ------------------ | ------------------------- |
+| 1    | Student information                                        | StudentID          | StudentID                 |
+| 2    | Student dormitory information                              | StudentID          | StudentID、dormitoryID    |
+| 3    | Dormitory table                                            | DormitoryID        | dormitoryID、buildingID   |
+| 4    | Dormitory supporting rooms/facilities                      | RoomID、buildingID | BuildingID                |
+| 5    | Student departure/enrollment  registration                 | StudentID          | StudentID                 |
+| 6    | Student temporary leave registration form                  | StudentID          | StudentID                 |
+| 7    | Registration form for students to change their dormitories | StudentID          | StudentID                 |
+| 8    | Registration form of  foreign visitors                     | Name               |                           |
+| 9    | Account management table                                   | UserID             |                           |
+| 10   | Dormitory inspection and  scoring record                   | InspectionID       | DormitoryID、inspectionID |
+| 11   | Dormitory checklist                                        | DormitoryID        | InspectionID              |
+| 12   | Dormitory reward and  punishment record                    | DormitoryID        | DormitoryID               |
+| 13   | Dormitory repair record                                    | DormitoryID        | DormitoryID先             |

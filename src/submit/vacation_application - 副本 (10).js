@@ -5,14 +5,11 @@ document.getElementById("vacation_application_submit").onclick = function()
     httpRequest.setRequestHeader("Content-type", "application/json");
     const obj =
     {
-        "dataTitle" : "vacation_application",
-        "dataInfo": {
-            "studentID" : document.getElementById("studentIDValue").value,
-            "studentName" : document.getElementById("studentNameValue").value,
-            "vacationType" : document.getElementById("vacationTypeValue").value,
-            "vacationStartingDate" : document.getElementById("vacationStartingDateValue").value,
-            "vacationEndingDate" : document.getElementById("vacationEndingDateValue").value,
-        }
+        "studentID" : document.getElementById("studentIDValue").value,
+        "studentName" : document.getElementById("studentNameValue").value,
+        "vacationType" : document.getElementById("vacationTypeValue").value,
+        "vacationStartingDate" : document.getElementById("vacationStartingDateValue").value,
+        "vacationEndingDate" : document.getElementById("vacationEndingDateValue").value,
     };
     alert(obj);
     console.log(obj);

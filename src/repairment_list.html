@@ -59,13 +59,16 @@
                                    <dt>用户基本设置</dt>
                                    <!--当前链接则添加class:active-->
                                    <dd><a href="./user_detail.html">账号设置</a></dd>
+                                   <dd><a href="./passwordchange.html">修改密码</a></dd>
                               </dl>
                          </li>
                          <li>
                         <dl>
                             <dt>基本信息查询</dt>
-                            <dd><a href="./student_list.html">学生信息查询</a></dd>
-                            <dd><a href="./dormitory_list.html">宿舍信息查询</a></dd>
+                            <dd><a href="./student_list.html">学生信息查询/添加</a></dd>
+                            <dd><a href="./dormitory_list.html">学生宿舍信息查询/添加</a></dd>
+                             <dd><a href="./dorm_list.html">宿舍信息查询/添加</a></dd>
+                             <dd><a href="./facility_list.html">配套房间信息查询/添加</a></dd>
                         </dl>
                          </li>
                          <li>
@@ -133,27 +136,17 @@
                          </section>
                          <table class="table">
                               <tbody>
-                                   <tr>
-                                        <th>宿舍编号</th>
-                                        <th>报修时间</th>
-                                        <th>内容说明</th>
-                                        <th>是否已维修完成</th>
-                                        <th>报修回复</th>
-                                        <th>操作</th>
-                                   </tr>
-                                   <tr>
-                                        <td class="center">S2-B345</td>
-                                        <td class="center">2020-11-29 12:30</td>
-                                        <td class="center">我们的宿舍楼塌了，快来抢修！</td>
-                                        <td class="center">是</td>
-                                        <td class="center">重建了一栋楼，搬过去住。</td>
-                                        <td class="center">
-                                             <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_detail.html"
-                                                  title="详情" class="link_icon">详情</a>
-                                             <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_detail.html"
-                                                  title="编辑回复" class="link_icon">编辑回复</a>
-                                             <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_list.html#"
-                                                  title="删除" class="link_icon">删除</a>
+                                   <tr><th width="20%">宿舍编号</th><td class="center">S2-B345</td></tr>
+                                   <tr><th>报修时间</th><td class="center">2020-11-29 12:30</td></tr>
+                                   <tr><th>内容说明</th><td class="center">我们的宿舍楼塌了，快来抢修！</td></tr>
+                                   <tr><th>是否已维修完成</th><td class="center">是</td></tr>
+                                   <tr><th>报修回复</th>
+                                        <td>
+                                        <textarea rows="10" cols="300" id="noteValue" class="textbox_multi_line" placeholder="请输入报修回复(最多可输入1000字)..."
+                                         style="height: 200px"></textarea>
+                                          <span class="item_name" style="width:120px;margin-left:550px;margin-top:50px;"></span>
+                                          <input type="submit" id="repairment_list_submit" class="link_btn">
+                                          <script src="submit/repairment_list.js"></script><!--js文件名-->
                                         </td>
                                    </tr>
                               </tbody>

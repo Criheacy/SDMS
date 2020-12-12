@@ -59,13 +59,16 @@
                             <dt>用户基本设置</dt>
                             <!--当前链接则添加class:active-->
                             <dd><a href="./user_detail.html">账号设置</a></dd>
+                            <dd><a href="./passwordchange.html">修改密码</a></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dt>基本信息查询</dt>
-                            <dd><a href="./student_list.html">学生信息查询</a></dd>
-                            <dd><a href="./dormitory_list.html">宿舍信息查询</a></dd>
+                            <dd><a href="./student_list.html">学生信息查询/添加</a></dd>
+                            <dd><a href="./dormitory_list.html">学生宿舍信息查询/添加</a></dd>
+                             <dd><a href="./dorm_list.html">宿舍信息查询/添加</a></dd>
+                             <dd><a href="./facility_list.html">配套房间信息查询/添加</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -130,36 +133,26 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
-                                <input type="text" id="studentIDValue" class="textbox textbox_295"
-                                    placeholder="学生学号...">
+                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
-                                <span class="item_name" style="width:120px;">学生姓名：</span>
-                                <input type="text" id="studentNameValue" class="textbox"
-                                    placeholder="学生姓名...">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">假期类型：</span>
-                                <select class="select" id="vacationTypeValue">
-                                    <option>寒假</option>
-                                    <option>暑假</option>
-                                    <option>法定节假日</option>
-                                    <option>其它...</option>
+                                <span class="item_name" style="width:120px;">出入校类型：</span>
+                                <select class="select" id="inoutTypeValue">
+                                    <option>返校</option>
+                                    <option>出校</option>
                                 </select>
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
-                                <span class="item_name" style="width:120px;">假期开始日期：</span>
-                                <input type="date" id="vacationStartingDateValue"
-                                    class="textbox" placeholder="离开日期...">
+                                <span class="item_name" style="width:120px;">登记日期：</span>
+                                <input type="date" id="recTimeValue"  class="textbox" placeholder="登记日期...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
-                                <span class="item_name" style="width:120px;">假期结束日期：</span>
-                                <input type="date" id="vacationEndingDateValue"
-                                    class="textbox" placeholder="结束日期...">
+                                <span class="item_name" style="width:120px;">事由：</span>
+                                <textarea rows="5" cols="80" id="issueValue" class="textbox"
+                                    placeholder="请输入备注(最多可输入1000字)..."></textarea>
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
@@ -171,7 +164,7 @@
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
                                 <input id="vacation_application_submit" type="submit" class="link_btn">
-                                <script src="submit_test/post_test.js"></script>
+                                <script src="submit/vacation_application.js"></script><!--js文件名-->
                             </li>
                         </ul>
                     </section>

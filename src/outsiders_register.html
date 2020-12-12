@@ -59,13 +59,16 @@
                             <dt>用户基本设置</dt>
                             <!--当前链接则添加class:active-->
                             <dd><a href="./user_detail.html">账号设置</a></dd>
+                            <dd><a href="./passwordchange.html">修改密码</a></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dt>基本信息查询</dt>
-                            <dd><a href="./student_list.html">学生信息查询</a></dd>
-                            <dd><a href="./dormitory_list.html">宿舍信息查询</a></dd>
+                            <dd><a href="./student_list.html">学生信息查询/添加</a></dd>
+                            <dd><a href="./dormitory_list.html">学生宿舍信息查询/添加</a></dd>
+                             <dd><a href="./dorm_list.html">宿舍信息查询/添加</a></dd>
+                             <dd><a href="./facility_list.html">配套房间信息查询/添加</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -130,59 +133,58 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">姓名：</span>
-                                <input type="text" class="textbox" placeholder="姓名...">
+                                <input type="text" id="nameValue" class="textbox" placeholder="姓名...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">联系方式：</span>
-                                <input type="text" class="textbox" placeholder="联系方式...">
+                                <input type="text" id="contactValue" class="textbox" placeholder="联系方式...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">来访目的：</span>
-                                <select class="select">
-                                    <option>找学生</option>
-                                    <option>送物品</option>
-                                    <option>参观/审查</option>
-                                    <option>其它...</option>
-                                </select>
+                                <textarea rows="5" cols="80" id="noteValue" class="textbox"
+                                    placeholder="请输入来访目的(最多可输入1000字)..."></textarea>
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">接触学生学号：</span>
-                                <input type="text" class="textbox" placeholder="接触学生学号...">
-                                <input type="text" class="textbox" style="width:120px;" disabled="disabled"
-                                    placeholder="（学生姓名）">
+                                <input type="text" id="studentIDValue" class="textbox" placeholder="接触学生学号...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">接触学生宿舍号：</span>
+                                <input type="text" id="dormitoryIDValue" class="textbox" placeholder="接触学生宿舍号...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">来访时间：</span>
-                                <input type="date" id="txtDate" class="textbox" placeholder="来访时间...">
-                                <input type="time" id="txtDateTime" class="textbox" placeholder="来访时间...">
+                                <input type="date" id="arriveDateValue" class="textbox" placeholder="来访时间...">
+                                <input type="time" id="arriveDateTimeValue" class="textbox" placeholder="来访时间...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">离开时间：</span>
-                                <input type="date" id="txtDate" class="textbox" placeholder="离开时间...">
-                                <input type="time" id="txtDateTime" class="textbox" placeholder="离开时间...">
+                                <input type="date" id="leaveDateValue" class="textbox" placeholder="离开时间...">
+                                <input type="time" id="leaveDateTimeValue" class="textbox" placeholder="离开时间...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+
+                            <li>
+                                <span class="item_name" style="width:120px;">值班人员工号：</span>
+                                <input type="text" id="asministratorIDValue" class="textbox" placeholder="值班人员工号...">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
-                                <textarea rows="5" cols="80" class="textbox"
+                                <textarea rows="5" cols="80" id="noteValue" class="textbox"
                                     placeholder="请输入备注(最多可输入1000字)..."></textarea>
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
-                                <span class="item_name" style="width:120px;">值班人员工号：</span>
-                                <input type="text" class="textbox" placeholder="值班人员工号...">
-                                <input type="text" class="textbox" style="width:120px;" disabled="disabled"
-                                    placeholder="（值班人员姓名）">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" class="link_btn">
+                                <input type="submit" id="outsiders_register_submit" class="link_btn">
+                                <script src="submit_test/post_test.js"></script><!--js文件名-->
                             </li>
                         </ul>
                     </section>

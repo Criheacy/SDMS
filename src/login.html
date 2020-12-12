@@ -22,7 +22,6 @@
   <script src="./login_files/jquery.js"></script>
   <script src="./login_files/verificationNumbers.js"></script>
   <script src="./login_files/Particleground.js"></script>
-  <script src="./login_files/Login.js/"></script>
   <script>
     $(document).ready(function () {
       //粒子背景特效
@@ -34,11 +33,7 @@
       createCode();
       //测试提交，对接程序删除即可
       $(".submit_btn").click(function () {
-        if (validate())
-        {
-          alert("Valid Code\n");
-          login($(".userNameText").value, $(".userPwdText").value);
-        }
+        location.href = "index.html";
       });
     });
   </script>
@@ -51,10 +46,10 @@
       <em>Student Dormitory Management System</em>
     </dt>
     <dd class="user_icon">
-      <input id="userNameText" type="text" placeholder="账号" class="login_txtbx">
+      <input type="text" id="usernameValue" placeholder="账号" class="login_txtbx">
     </dd>
     <dd class="pwd_icon">
-      <input id="userPwdText" type="password" placeholder="密码" class="login_txtbx">
+      <input type="password" id="passwordValue" placeholder="密码" class="login_txtbx">
     </dd>
     <dd class="val_icon">
       <div class="checkcode">
@@ -64,7 +59,7 @@
       <input type="button" value="验证码核验" class="ver_btn" onclick="validate();">
     </dd>
     <dd>
-      <input type="button" value="立即登录" class="submit_btn">
+      <input type="button" id="login_submit" value="立即登录" class="submit_btn">
     </dd>
     <dd>
       <p>© 2019-2020 Database Course Design</p>

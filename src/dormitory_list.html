@@ -59,13 +59,16 @@
                                    <dt>用户基本设置</dt>
                                    <!--当前链接则添加class:active-->
                                    <dd><a href="./user_detail.html">账号设置</a></dd>
+                                   <dd><a href="./passwordchange.html">修改密码</a></dd>
                               </dl>
                          </li>
                          <li>
                         <dl>
                             <dt>基本信息查询</dt>
-                            <dd><a href="./student_list.html">学生信息查询</a></dd>
-                            <dd><a href="./dormitory_list.html"  class="active">宿舍信息查询</a></dd>
+                            <dd><a href="./student_list.html">学生信息查询/添加</a></dd>
+                            <dd><a href="./dormitory_list.html"  class="active">学生宿舍信息查询/添加</a></dd>
+                             <dd><a href="./dorm_list.html">宿舍信息查询/添加</a></dd>
+                             <dd><a href="./facility_list.html">配套房间信息查询/添加</a></dd>
                         </dl>
                          </li>
                          <li>
@@ -126,6 +129,7 @@
                     <div class="rt_content">
                          <div class="page_title">
                               <h2 class="fl">宿舍信息列表</h2>
+                              <a class="fr top_rt_btn" href="./add_dormitory.html">添加一条记录</a>
                          </div>
                          <section class="mtb">
                               <input type="text" class="textbox textbox_225" placeholder="输入学号/姓名/宿舍号/学院/年级/班级/手机号查询...">
@@ -135,29 +139,19 @@
                               <tbody>
                                    <tr>
                                         <th>学号</th>
-                                        <th>姓名</th>
                                         <th>宿舍号</th>
                                         <th>床位</th>
-                                        <th>学院</th>
-                                        <th>年级</th>
-                                        <th>班级</th>
-                                        <th>手机号码</th>
+                                        <th>是否是宿舍长</th>
                                         <th>操作</th>
                                    </tr>
                                    <tr>
                                         <td class="center">2019051030194</td>
-                                        <td class="center">何凯琦</td>
                                         <td class="center">S2-B345</td>
                                         <td class="center">4</td>
-                                        <td class="center">计算机科学与技术</td>
-                                        <td class="center">2019</td>
-                                        <td class="center">智能班</td>
-                                        <td class="center">18300000000</td>
+                                        <td class="center">是</td>
                                         <td class="center">
-                                             <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_detail.html"
-                                                  title="编辑" class="link_icon">e</a>
-                                             <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_list.html#"
-                                                  title="删除" class="link_icon">d</a>
+                                             <a title="编辑" class="link_icon">编辑</a>
+                                             <a title="删除" class="link_icon">删除</a>
                                         </td>
                                    </tr>
                               </tbody>

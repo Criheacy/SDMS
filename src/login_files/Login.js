@@ -1,7 +1,7 @@
-var token;
-
-function login(userName, userPwd)
-{	
+function login()
+{
+	var userName = ($(".userNameText"));
+	var userPwd = ($(".userPwdText"));
 	var httpRequest = new XMLHttpRequest();
 	httpRequest.open('POST', 'http://localhost:8080/a/login/', true);
 	httpRequest.setRequestHeader("Content-type", "application/json");
@@ -13,24 +13,15 @@ function login(userName, userPwd)
         "userPwd" : userPwd,
         "timeStamp" : nowDate.toLocaleString(),
         "userAttribute" : null
-    };
+	};
+	alert(JSON.stringify(obj));
     httpRequest.send(JSON.stringify(obj));
-
     httpRequest.onreadystatechange = Response();
 }
-
 
 function Response ()
 {
 	var json = httpRequest.responseText;
-	if (json.code != 200)
-		;
-	
-	var data = json.data;
-	if (data.userType == 'Student')
-	{
-		location.herf = "StudentIndex.html";
-	}
-	
-	token = json.token;
+	console.log(json);
+	alert(json);
 };

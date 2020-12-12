@@ -19,13 +19,9 @@ app.post('', function (req, res) {
 
     req.on('data', function(data) {
         params = JSON.parse(data);
-        console.log(data);
-        console.log(typeof(params));
-        console.log(params);
     })
 
     req.on('end', function() {
-        console.log("ending", params);
         if (params.studentName == '何凯琦')
             console.log("admin\n");
     })

@@ -12,6 +12,7 @@
 <script src="js/html5.js"></script>
 <![endif]-->
      <script src="./common/jquery.js"></script>
+     <script src="./student_list_files/student_list_query.js"></script>
      <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
      <script>
 
@@ -128,8 +129,8 @@
                               <h2 class="fl">学生信息列表</h2>
                          </div>
                          <section class="mtb">
-                              <input type="text" class="textbox textbox_225" placeholder="输入学号/姓名/宿舍号/年级/班级查询...">
-                              <input type="button" value="查询" class="group_btn">
+                              <input id="queryText" type="text" class="textbox textbox_225" placeholder="输入学号/姓名/宿舍号/年级/班级查询...">
+                              <input id="queryButton" type="button" value="查询" class="group_btn">
                          </section>
                          <table class="table">
                               <tbody>

@@ -3,7 +3,7 @@ window.onload = function ()
 	document.getElementById("queryButton").onclick = function ()
 	{
 		var queryText = document.getElementById("queryText").value.toString();
-		alert("Querying "+typeof(queryText)+" "+queryText);
+//		alert("Querying "+typeof(queryText)+" "+queryText);
 
 		var httpRequest = new XMLHttpRequest();
 

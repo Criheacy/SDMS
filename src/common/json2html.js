@@ -6,12 +6,8 @@ type : json
 }
 */
 
-console.log("json2table initializing...\n");
-
 function json2table(srcJson, tableColumns)
 {
-	console.log("json2table called\n");
-
 	var result = "";
 	result += "<table class='table'>";
 
@@ -35,4 +31,3 @@ function json2table(srcJson, tableColumns)
 	result += "</table>";
 	return result;
 }
-console.log("json2table initialize complete\n");

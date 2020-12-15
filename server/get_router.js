@@ -4,7 +4,6 @@ const app = express();
 const querystring = require('querystring');
 const util = require('util');
 
-
 const mysql  = require('mysql'); 
 const connection = mysql.createConnection({    
   host     : 'localhost',
@@ -39,7 +38,7 @@ app.get('/s/student_list', function (req, res) {
 			"SELECT * \
 			 FROM student_info LEFT OUTER JOIN student_dormitory_info \
 			 ON student_info.StuID = student_dormitory_info.StuID \
-			 WHERE student_info.StuID = '201905130194'";
+			 WHERE student_info.StuID = ?";
 		addSqlParams = [req.query.queryText];
 	}
 	else {
@@ -47,7 +46,7 @@ app.get('/s/student_list', function (req, res) {
 			"SELECT * \
 			 FROM student_info LEFT OUTER JOIN student_dormitory_info \
 			 ON student_info.StuID = student_dormitory_info.StuID \
-			 WHERE student_info.StuID = '201905130194'";
+			 WHERE student_info.StuID = ?";
 		addSqlParams = [req.query.queryText];
 	}
 

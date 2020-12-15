@@ -12,6 +12,8 @@
 <script src="js/html5.js"></script>
 <![endif]-->
      <script src="./common/jquery.js"></script>
+     <script src="./common/json2html.js"></script>
+     <script src="./student_list_files/update_student_list.js"></script>
      <script src="./student_list_files/student_list_query.js"></script>
      <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
      <script>
@@ -132,37 +134,9 @@
                               <input id="queryText" type="text" class="textbox textbox_225" placeholder="输入学号/姓名/宿舍号/年级/班级查询...">
                               <input id="queryButton" type="button" value="查询" class="group_btn">
                          </section>
-                         <table class="table">
-                              <tbody>
-                                   <tr>
-                                        <th>学号</th>
-                                        <th>姓名</th>
-                                        <th>宿舍号</th>
-                                        <th>床位</th>
-                                        <th>学院</th>
-                                        <th>年级</th>
-                                        <th>班级</th>
-                                        <th>手机号码</th>
-                                        <th>操作</th>
-                                   </tr>
-                                   <tr>
-                                        <td class="center">2019051030194</td>
-                                        <td class="center">何凯琦</td>
-                                        <td class="center">S2-B345</td>
-                                        <td class="center">4</td>
-                                        <td class="center">计算机科学与技术</td>
-                                        <td class="center">2019</td>
-                                        <td class="center">智能班</td>
-                                        <td class="center">18300000000</td>
-                                        <td class="center">
-                                             <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_detail.html"
-                                                  title="编辑" class="link_icon">e</a>
-                                             <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_list.html#"
-                                                  title="删除" class="link_icon">d</a>
-                                        </td>
-                                   </tr>
-                              </tbody>
-                         </table>
+
+                         <div id="student_list_table"></div>
+
                          <aside class="paging">
                               <a>第一页</a>
                               <a>1</a>

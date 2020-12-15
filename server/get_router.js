@@ -4,17 +4,19 @@ const app = express();
 const querystring = require('querystring');
 const util = require('util');
 
-/*
+
 const mysql  = require('mysql'); 
 const connection = mysql.createConnection({    
   host     : 'localhost',
   user     : 'root',
   password : '',
-  port     : '33060',
+  port     : '3306',
   database : 'app_sdms',
 });
 connection.connect();
-*/
+connection.query("USE APP_SDMS;");
+console.log("connection = "+connection);
+
 //解决跨域
 app.all('*', function (req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -31,11 +33,50 @@ app.all('*', function (req, res, next) {
 app.get('/s/student_list', function (req, res) {
 	console.log(req.query);
 
-	let params = {
-		"code": 1,
-		"message": "success",
+	let [addSql,addSqlParams] = ['',[]];
+	if (req.query.type == undefined) {
+		addSql = 
+			"SELECT * \
+			 FROM student_info LEFT OUTER JOIN student_dormitory_info \
+			 ON student_info.StuID = student_dormitory_info.StuID \
+			 WHERE student_info.StuID = '201905130194'";
+		addSqlParams = [req.query.queryText];
 	}
-	res.send(params)
+	else {
+		addSql = 
+			"SELECT * \
+			 FROM student_info LEFT OUTER JOIN student_dormitory_info \
+			 ON student_info.StuID = student_dormitory_info.StuID \
+			 WHERE student_info.StuID = '201905130194'";
+		addSqlParams = [req.query.queryText];
+	}
+
+	console.log(addSql);
+	console.log(addSqlParams);
+
+	connection.query(addSql,addSqlParams,function (err, result) {
+		if (err) {
+			console.log('[QUERY ERROR] - ',err.message);
+		return;
+		}
+		if (result.length) {
+		let params = {
+			code:1,
+			message:"success",
+			data:result
+		};
+		res.json(params);
+		res.end();
+		}
+		else {
+			let params = {
+				code:0,
+				message:"no data found"
+			};
+			res.json(params);
+			res.end();
+		};
+	});
 });
 
 var server = app.listen(8080, function () {

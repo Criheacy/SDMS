@@ -58,15 +58,9 @@
                               <dl>
                                    <dt>用户基本设置</dt>
                                    <!--当前链接则添加class:active-->
-                                   <dd><a href="./user_detail.html" class="active">账号设置</a></dd>
+                                   <dd><a href="./user_detail.html">账号设置</a></dd>
+                                   <dd><a href="./passwordchange.html">修改密码</a></dd>
                               </dl>
-                         </li>
-                         <li>
-                        <dl>
-                            <dt>基本信息查询</dt>
-                            <dd><a href="./student_list.html">学生信息查询</a></dd>
-                            <dd><a href="./dormitory_list.html">宿舍信息查询</a></dd>
-                        </dl>
                          </li>
                          <li>
                               <dl>
@@ -126,35 +120,20 @@
                               <HR>
 
                               <li>
-                                   <span class="item_name" style="width:120px;">宿舍楼：</span>
-                                   <input type="text" class="textbox" value="S2" placeholder="宿舍楼..."
-                                        disabled="disabled">
+                                   <span class="item_name" style="width:120px;">宿舍号：</span>
+                                   <input type="text" class="textbox" placeholder="宿舍号...">
                                    <span class="errorTips">错误提示信息...</span>
                               </li>
-                              <li>
-                                   <span class="item_name" style="width:120px;">宿舍楼层：</span>
-                                   <input type="text" class="textbox" value="3" placeholder="宿舍楼层..."
-                                        disabled="disabled">
-                                   <span class="errorTips">错误提示信息...</span>
-                              </li>
-                              <li>
-                                   <span class="item_name" style="width:120px;">宿舍门牌号：</span>
-                                   <input type="text" class="textbox" value="B345" placeholder="宿舍门牌号..."
-                                        disabled="disabled">
-                                   <span class="errorTips">错误提示信息...</span>
-                              </li>
-                              <li>
-                                   <span class="item_name" style="width:120px;">报修信息：</span>
-                                   <input type="text" class="textbox" value="B345" placeholder="宿舍门牌号..."
-                                        disabled="disabled">
-                                   <span class="errorTips">错误提示信息...</span>
-                              </li>
-
-                              <HR>
-
+                               <li>
+                                <span class="item_name" style="width:120px;">报修事由：</span>
+                                <textarea rows="5" cols="80" id="noteValue" class="textbox_multi_line"
+                                    placeholder="请输入报修事由(最多可输入1000字)..."></textarea>
+                                <span class="errorTips">错误提示信息...</span>
+                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;"></span>
-                                   <input type="submit" class="link_btn">
+                                   <input type="submit" id="repairment_ask_submit" class="link_btn">
+                                    <script src="submit_test/repairment_ask.js"></script><!--js文件名-->
                               </li>
                          </ul>
                     </div>

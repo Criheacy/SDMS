@@ -59,13 +59,17 @@
                                    <dt>用户基本设置</dt>
                                    <!--当前链接则添加class:active-->
                                    <dd><a href="./user_detail.html" class="active">账号设置</a></dd>
+                                   <dd><a href="./passwordchange.html">修改密码</a></dd>
+                                   <dd><a href="./user_list.html">账户信息管理</a></dd>
                               </dl>
                          </li>
                          <li>
                         <dl>
                             <dt>基本信息查询</dt>
-                            <dd><a href="./student_list.html" >学生信息查询</a></dd>
-                            <dd><a href="./dormitory_list.html">宿舍信息查询</a></dd>
+                            <dd><a href="./student_list.html">学生信息查询/添加</a></dd>
+                            <dd><a href="./dormitory_list.html">学生宿舍信息查询/添加</a></dd>
+                             <dd><a href="./dorm_list.html">宿舍信息查询/添加</a></dd>
+                             <dd><a href="./facility_list.html">配套房间信息查询/添加</a></dd>
                         </dl>
                          </li>
                          <li>
@@ -131,45 +135,32 @@
                               <li>
                                    <span class="item_name" style="width:120px;">上传头像：</span>
                                    <label class="uploadImg">
-                                        <input type="file">
+                                        <input type="file" id="faceValue">
                                         <span>上传头像</span>
                                    </label>
                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;">账号：</span>
-                                   <input type="text" class="textbox textbox_225" value="201905130194"
-                                        placeholder="201912345678" disabled="disabled">
+                                   <input type="text" id="accountIDValue" class="textbox textbox_225" value="201905130194"
+                                        placeholder="201912345678" >
                                    <span class="errorTips">错误提示信息...</span>
-                              </li>
-                              <li>
-                                   <span class="item_name" style="width:120px;">登录密码：</span>
-                                   <input type="password" class="textbox textbox_225" value="18300000000"
-                                        placeholder="">
-                                   <span class="errorTips">错误提示信息...</span>
-                              </li>
-                              <li>
-                                   <span class="item_name" style="width:120px;">当前状态：</span>
-                                   <select class="select">
-                                        <option>值班中</option>
-                                        <option>未值班</option>
-                                        <option>休假中</option>
-                                   </select>
                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;">电子邮箱：</span>
-                                   <input type="email" class="textbox textbox_225" value="hekaiqi@mail.sdu.edu.cn"
+                                   <input type="email" id="mailValue" class="textbox textbox_225" value="hekaiqi@mail.sdu.edu.cn"
                                         placeholder="电子邮件地址...">
                                    <span class="errorTips">错误提示信息...</span>
                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;">手机号码：</span>
-                                   <input type="tel" class="textbox textbox_225" value="18300000000"
+                                   <input type="tel" id="phoneValue" class="textbox textbox_225" value="18300000000"
                                         placeholder="手机号码...">
                                    <span class="errorTips">错误提示信息...</span>
                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;"></span>
-                                   <input type="submit" class="link_btn" value="保存信息">
+                                   <input type="submit" id="_submit" class="link_btn" value="保存信息">
+                                   <script src="submit/user_detail.js"></script><!--js文件名-->
                               </li>
                          </ul>
                     </div>

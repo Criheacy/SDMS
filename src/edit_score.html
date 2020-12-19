@@ -52,20 +52,24 @@
           <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0"
                style="max-height: none;">
                <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                    <h2><a href="./index.html">学生信息表 / Student List</a></h2>
+                    <h2><a href="./index.html">添加评分 / Edit Score</a></h2>
                     <ul>
                          <li>
                               <dl>
                                    <dt>用户基本设置</dt>
                                    <!--当前链接则添加class:active-->
                                    <dd><a href="./user_detail.html" >账号设置</a></dd>
+                                   <dd><a href="./passwordchange.html">修改密码</a></dd>
+                                   <dd><a href="./user_list.html">账户信息管理</a></dd>
                               </dl>
                          </li>
                          <li>
                         <dl>
                             <dt>基本信息查询</dt>
-                            <dd><a href="./student_list.html">学生信息查询</a></dd>
-                            <dd><a href="./dormitory_list.html">宿舍信息查询</a></dd>
+                            <dd><a href="./student_list.html">学生信息查询/添加</a></dd>
+                            <dd><a href="./dormitory_list.html">学生宿舍信息查询/添加</a></dd>
+                             <dd><a href="./dorm_list.html">宿舍信息查询/添加</a></dd>
+                             <dd><a href="./facility_list.html">配套房间信息查询/添加</a></dd>
                         </dl>
                          </li>
                          <li>
@@ -127,6 +131,7 @@
                          <div class="page_title">
                               <h2 class="fl">编辑评分</h2>
                          </div>
+                         <form>
                          <ul class="ulColumn2">
                               <li>
                                    <span class="item_name" style="width:120px;">检查描述：</span>
@@ -138,53 +143,43 @@
                                    <span class="item_name" style="width:120px;">(无备注)</span>
                               </li>
 
-                              <li>
-                                   <span class="item_name" style="width:50px;"></span>
-                                   <a href="http://demo.qfpffmp.cn:8020/cssthemes6/1124zh10/user_detail.html"
-                                        title="返回检查列表" class="link_icon">不是这次检查？返回检查列表</a>
-                              </li>
-
                               <HR>
 
                               <li>
                                    <span class="item_name" style="width:120px;">宿舍唯一编号：</span>
-                                   <input type="text" class="textbox" placeholder="宿舍唯一编号...">
-                                   <span class="errorTips">错误提示信息...</span>
+                                   <input type="text" id="dormIDValue" class="textbox" placeholder="宿舍唯一编号..."
+                                    oninvalid="setCustomValidity('请输入宿舍号');" required>
                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;">宿舍楼：</span>
                                    <input type="text" class="textbox" value="S2" placeholder="宿舍楼..."
                                         disabled="disabled">
-                                   <span class="errorTips">错误提示信息...</span>
                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;">宿舍楼层：</span>
                                    <input type="text" class="textbox" value="3" placeholder="宿舍楼层..."
                                         disabled="disabled">
-                                   <span class="errorTips">错误提示信息...</span>
                               </li>
                               <li>
                                    <span class="item_name" style="width:120px;">宿舍门牌号：</span>
                                    <input type="text" class="textbox" value="B345" placeholder="宿舍门牌号..."
                                         disabled="disabled">
-                                   <span class="errorTips">错误提示信息...</span>
                               </li>
 
                               <HR>
 
                               <li>
                                    <span class="item_name" style="width:120px;">评分：</span>
-                                   <input type="number" class="textbox_enhanced" value="100" placeholder="宿舍门牌号...">
-                                   <span class="errorTips">错误提示信息...</span>
+                                   <input type="number" id="scoreValue" class="textbox_enhanced" placeholder="评分..."
+                                    oninvalid="setCustomValidity('请输入评分');" required>
                               </li>
 
                               <li>
                                    <span class="item_name" style="width:120px;"></span>
                                    <input type="submit" class="link_btn">
-                                   <span class="item_name" style="width:5px;"></span>
-                                   <input type="submit" class="link_btn" value="提交并转到下一个宿舍">
                               </li>
                          </ul>
+                         </form>
                          <aside class="paging">
                               <a>第一页</a>
                               <a>1</a>

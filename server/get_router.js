@@ -6,6 +6,7 @@ const util = require('util');
 
 var studentListHandler = require("./server/get_functions/student_list_handler.js");
 var dormitoryListHandler = require("./server/get_functions/dormitory_list_handler.js");
+var loginHandler = require("./server/post_functions/login_handler.js");
 
 const mysql  = require('mysql'); 
 const connection = mysql.createConnection({    
@@ -39,6 +40,23 @@ app.get('/s/dormitory_list', function (req, res) {
 	console.log("QUERY of dormitory list received.");
 	console.log(" >  Handle by dormitoryListHandler.js");
 	dormitoryListHandler.qDormitoryList(req, res, connection);
+});
+
+app.post('', function (req, res) {
+    var params;
+    req.on('data', function(data) {
+        params = JSON.parse(data);
+    })
+    req.on('end', function() {
+		if (params.hasOwnProperty("type")) {
+			if (params.type == "login")
+				loginHandler.qLogin(params, res, connection);
+		}
+		else {
+			console.error("router: null type of POST\n" + params.toString());
+		}
+    })
+    res.json({ title: "response" });
 });
 
 var server = app.listen(8080, function () {

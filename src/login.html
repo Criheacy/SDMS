@@ -23,45 +23,6 @@
   <script src="./login_files/verificationNumbers.js"></script>
   <script src="./login_files/login.js/"></script>
   <script src="./login_files/Particleground.js"></script>
-  <script>
-    $(document).ready(function () {
-      //粒子背景特效
-      $('body').particleground({
-        dotColor: '#5cbdaa',
-        lineColor: '#5cbdaa'
-      });
-      //验证码
-      createCode();
-      //测试提交，对接程序删除即可
-      $(".submit_btn").click(function () {
-        if (validate())
-        {
-          alert("Valid Code\n");
-
-          userName = document.getElementById("userNameText").value;
-          userPwd = document.getElementById("userPwdText").value;
-
-          var httpRequest = new XMLHttpRequest();//第一步：新建对象
-          var url = 'http://localhost:8081' + '/s?'
-              + 'userName=' + userName + '&'
-              + 'userPwd=' + userPwd;
-          console.log(url);
-
-          httpRequest.open('GET', url, true);//第二步：打开连接  将请求参数写在url中 
-          httpRequest.send();//第三步：发送请求  将请求参数写在URL中
-          /*
-          * 获取数据后的处理程序
-          */
-          httpRequest.onreadystatechange = function () {
-            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-              var res = httpRequest.responseText;//获取到json字符串，解析
-              console.log(res);
-            }
-          };
-        }
-      });
-    });
-  </script>
 </head>
 
 <body><canvas class="pg-canvas" width="1920" height="254"></canvas>

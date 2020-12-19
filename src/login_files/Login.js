@@ -1,21 +1,45 @@
-function login()
-{
-	var httpRequest = new XMLHttpRequest();//第一步：新建对象
+documnet.ready(function () {
+	$('body').particleground({
+        dotColor: '#5cbdaa',
+        lineColor: '#5cbdaa'
+	});
+	createCode();
 
-	var url = 'http://localhost:8080' + '/s?'
-			+ 'userName=' + userName + '&'
-			+ 'userPwd=' + userPwd;
-	console.log(url);
+	document.getElementById("login_info_submit").onclick = function() 
+	{
+		if (!validate()) return;
 
-	httpRequest.open('GET', url, true);//第二步：打开连接  将请求参数写在url中 
-	httpRequest.send();//第三步：发送请求  将请求参数写在URL中
-	/*
-	 * 获取数据后的处理程序
-	 */
-	httpRequest.onreadystatechange = function () {
-		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-			var res = httpRequest.responseText;//获取到json字符串，解析
-			console.log(res);
-		}
-	};
-}
+		var httpRequest = new XMLHttpRequest();
+		httpRequest.open('POST', 'http://localhost:8080/', true);
+		httpRequest.setRequestHeader("Content-type", "application/json");
+
+		var date = new Date();
+
+		const obj =
+		{
+			"type" : "login",
+			"data": {
+				"userName" : document.getElementById("userNameText").value,
+				"userPwd" : document.getElementById("userPwdText").value,
+				"timeStamp" : date.toLocaleString(),
+			}
+		};
+
+		alert(obj);
+		console.log(obj);
+
+		httpRequest.send(JSON.stringify(obj));
+
+		alert(JSON.stringify(obj));
+		console.log(JSON.stringify(obj));
+
+		httpRequest.onreadystatechange = function ()
+		{
+			if (httpRequest.readyState == 4 && httpRequest.status == 200)
+			{
+				var json = httpRequest.responseText;
+				console.log(json);
+			}
+		};
+	}
+})

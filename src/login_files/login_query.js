@@ -1,7 +1,7 @@
-documnet.ready(function () {
+window.onload = function () {
 	$('body').particleground({
-        dotColor: '#5cbdaa',
-        lineColor: '#5cbdaa'
+		dotColor: '#5cbdaa',
+		lineColor: '#5cbdaa'
 	});
 	createCode();
 
@@ -42,4 +42,4 @@ documnet.ready(function () {
 			}
 		};
 	}
-})
+}

@@ -12,6 +12,8 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
+    <script src="./common/text_query_utility.js"></script>
+    <script src="./common/get_query_text_from_html.js"></script>
     <script src="./change_dormitory_files/change_dormitory.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
@@ -131,7 +133,7 @@
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
                                 <input type="text" id="stuID" class="textbox textbox_295" placeholder="学生学号...">
-                                <input type="text" class="textbox" value="（学生姓名）" disabled="disabled">
+                                <input type="text" id="_stuName" class="textbox" value="（学生姓名）" disabled="disabled">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>

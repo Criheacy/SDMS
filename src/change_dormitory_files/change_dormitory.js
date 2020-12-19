@@ -2,10 +2,11 @@ window.onload = function ()
 {
 	document.getElementById("submitButton").onclick = function ()
 	{
-		var stuID = document.getElementById("stuID").value.toString();
-		var recTime = document.getElementById("recDate").value.toString();
-		var preDormID = document.getElementById("preDormID").value.toString();
-		var aftDormID = document.getElementById("aftDormID").value.toString();
+		var vistorName = document.getElementById("stuID").value.toString();
+		var purpose = document.getElementById("recDate").value.toString();
+		var arriveTime = document.getElementById("preDormID").value.toString();
+		var leaveTime = document.getElementById("aftDormID").value.toString();
+		var admin = document.getElementById("aftDormID").value.toString();
 		var note = document.getElementById("note").value.toString();
 
 		var httpRequest = new XMLHttpRequest();

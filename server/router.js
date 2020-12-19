@@ -9,6 +9,8 @@ var dormitoryListHandler = require("./server/get_functions/dormitory_list_handle
 var loginHandler = require("./server/post_functions/login_handler.js");
 var affairsUtility = require("./server/get_functions/affairs_utility.js");
 
+var getUtility = require("./server/get_functions/get_utility.js");
+
 const mysql  = require('mysql'); 
 const connection = mysql.createConnection({
   host     : 'localhost',
@@ -30,6 +32,10 @@ app.all('*', function (req, res, next) {
 		next();
 	}
 });
+
+app.get('/s/get_utility/get_student_name', function(req, res) {
+	getUtility.getStuNameByStuID(req, res, connection);
+})
 
 app.get('/s/student_list', function (req, res) {
 	console.log("QUERY of student list received.");
@@ -59,6 +65,12 @@ app.get('/s/change_dormitory', function (req, res) {
 	console.log("INSERT of change dormitory received.");
 	console.log(" >  Handle by affairsUtility.js");
 	affairsUtility.aChangeDormitory(req, res, connection);
+});
+
+app.get('/s/visitor_record', function (req, res) {
+	console.log("INSERT of visitor record received.");
+	console.log(" >  Handle by affairsUtility.js");
+	affairsUtility.aVisitorRecord(req, res, connection);
 });
 
 app.post('', function (req, res) {

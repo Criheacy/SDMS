@@ -60,7 +60,7 @@
                             <!--当前链接则添加class:active-->
                             <dd><a href="./user_detail.html">账号设置</a></dd>
                             <dd><a href="./passwordchange.html">修改密码</a></dd>
-                            <dd><a href="./user_list.html" class="active">账户信息管理</a></dd>
+                            <dd><a href="./user_list.html">账户信息管理</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -131,33 +131,34 @@
                         <h2 class="fl">请假申请表</h2>
                     </div>
                     <section>
+                        <form>
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
-                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号...">
-                                <span class="errorTips">错误提示信息...</span>
+                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号..."
+                                pattern="^.{12}$" oninvalid="setCustomValidity('请输入12位学号');" required>
+                                <input type="text" class="textbox" style="width:120px;" disabled="disabled"
+                                    placeholder="（学生姓名）">
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">请假日期：</span>
-                                <input type="date" id="recTimeValue" class="textbox" placeholder="请假日期...">
-                                <span class="errorTips">错误提示信息...</span>
+                                <input type="date" id="recTimeValue" class="textbox" placeholder="请假日期..."
+                                oninvalid="setCustomValidity('请输入请假日期');" required>
                             </li>
                             <li>
-                                <span class="item_name" style="width:120px;">请假时长（小时）：</span>
-                                <input type="number" id="timeValue" class="textbox" placeholder="请假时长...">
-                                <span class="errorTips">错误提示信息...</span>
+                                <span class="item_name" style="width:120px;">请假时长：</span>
+                                <input type="number" id="timeValue" class="textbox" placeholder="请假时长..."
+                                oninvalid="setCustomValidity('请输入请假时长');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">请假事由：</span>
-                                <textarea rows="10" cols="80" id="issueValue" class="textbox_multi_line" placeholder="请输入请假事由(最多可输入1000字)..."
-                                    style="height: 200px"></textarea>
-                                <span class="errorTips">错误提示信息...</span>
+                                <input type="text" id="issueValue" class="textbox" placeholder="请假事由..."
+                                oninvalid="setCustomValidity('请输入请假事由');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
                                 <textarea rows="5" cols="80" id="noteValue" class="textbox_multi_line"
                                     placeholder="请输入备注(最多可输入1000字)..."></textarea>
-                                <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
@@ -165,6 +166,7 @@
                                 <script src="submit_test/post_test.js"></script><!--js文件名-->
                             </li>
                         </ul>
+                        </form>
                     </section>
                 </div>
             </div>

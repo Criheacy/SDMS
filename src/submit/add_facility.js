@@ -1,15 +1,15 @@
-document.getElementById("vacation_application_submit").onclick = function() 
+document.getElementById("add_facility_submit").onclick = function()
 {
     var httpRequest = new XMLHttpRequest();
     httpRequest.open('POST', 'http://localhost:8080/', true);
     httpRequest.setRequestHeader("Content-type", "application/json");
     const obj =
     {
-        "studentID" : document.getElementById("studentIDValue").value,
-        "studentName" : document.getElementById("studentNameValue").value,
-        "vacationType" : document.getElementById("vacationTypeValue").value,
-        "vacationStartingDate" : document.getElementById("vacationStartingDateValue").value,
-        "vacationEndingDate" : document.getElementById("vacationEndingDateValue").value,
+        "FaciRoomID" : document.getElementById("faciRoomIDValue").value,
+        "BuildingID" : document.getElementById("buildingIDValue").value,
+        "FaciType" : document.getElementById("faciTypeValue").value,
+        "FloorID" : document.getElementById("floorIDValue").value,
+        "Note" : document.getElementById("noteValue").value,
     };
     alert(obj);
     console.log(obj);

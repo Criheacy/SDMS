@@ -60,6 +60,7 @@
                             <!--当前链接则添加class:active-->
                             <dd><a href="./user_detail.html">账号设置</a></dd>
                             <dd><a href="./passwordchange.html">修改密码</a></dd>
+                            <dd><a href="./user_list.html">账户信息管理</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -133,18 +134,18 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
-                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号...">
-                                <span class="errorTips">错误提示信息...</span>
+                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号..."
+                                pattern="^.{12}$" oninvalid="setCustomValidity('请输入12位学号');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">宿舍号：</span>
-                                <input type="text" id="dormitoryIDValue" class="textbox textbox_295" placeholder="宿舍号...">
-                                <span class="errorTips">错误提示信息...</span>
+                                <input type="text" id="dormitoryIDValue" class="textbox textbox_295" placeholder="宿舍号..."
+                                oninvalid="setCustomValidity('请输入宿舍号');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">床位：</span>
-                                <input type="text" id="bedIDValue" class="textbox textbox_295" placeholder="床位...">
-                                <span class="errorTips">错误提示信息...</span>
+                                <input type="text" id="bedIDValue" class="textbox textbox_295" placeholder="床位..."
+                                pattern="^.{1}$" oninvalid="setCustomValidity('请输入床位');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">是否为宿舍长：</span>
@@ -152,7 +153,6 @@
                                     <option>是</option>
                                     <option>否</option>
                                 </select>
-                                <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>

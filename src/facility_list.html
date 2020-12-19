@@ -52,7 +52,7 @@
           <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0"
                style="max-height: none;">
                <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                    <h2><a href="./index.html">宿舍信息表 / Dormitory List</a></h2>
+                    <h2><a href="./index.html">配套房间信息表 / Facility Room</a></h2>
                     <ul>
                          <li>
                               <dl>
@@ -60,6 +60,7 @@
                                    <!--当前链接则添加class:active-->
                                    <dd><a href="./user_detail.html">账号设置</a></dd>
                                    <dd><a href="./passwordchange.html">修改密码</a></dd>
+                                   <dd><a href="./user_list.html">账户信息管理</a></dd>
                               </dl>
                          </li>
                          <li>
@@ -131,33 +132,18 @@
                               <h2 class="fl">宿舍信息列表</h2>
                               <a class="fr top_rt_btn" href="./add_facility.html">添加一条记录</a>
                          </div>
-                         <section class="mtb">
-                              <input type="text" class="textbox textbox_225" placeholder="输入宿舍号/楼号/楼层/房间号查询...">
+                         <section>
+                         <div class="dropdown">
+                              <input type="text" class="textbox textbox_225" placeholder="模糊查询...">
                               <input type="button" value="查询" class="group_btn">
+                              <div class="dropdown-content">
+                                   <input type="text" class="textbox textbox_225" placeholder="输入配套房间号查询..."><br>
+                                   <input type="text" class="textbox textbox_225" placeholder="输入楼号查询..."><br>
+                                   <input type="text" class="textbox textbox_225" placeholder="输入配套房间类型查询..."><br>
+                                   <input type="text" class="textbox textbox_225" placeholder="输入楼层查询..."><br>
+                              </div>
+                         </div>
                          </section>
-                         <table class="table">
-                              <tbody>
-                                   <tr>
-                                        <th>配套房间号</th>
-                                        <th>楼号</th>
-                                        <th>房间类型</th>
-                                        <th>楼层</th>
-                                        <th>备注</th>
-                                        <th>操作</th>
-                                   </tr>
-                                   <tr>
-                                        <td class="center">阿巴阿巴</td>
-                                        <td class="center">S2</td>
-                                        <td class="center">自助厨房</td>
-                                        <td class="center">2</td>
-                                        <td class="center">别煮螺蛳粉</td>
-                                        <td class="center">
-                                             <a title="编辑" class="link_icon">编辑</a>
-                                             <a title="删除" class="link_icon">删除</a>
-                                        </td>
-                                   </tr>
-                              </tbody>
-                         </table>
                          <aside class="paging">
                               <a>第一页</a>
                               <a>1</a>

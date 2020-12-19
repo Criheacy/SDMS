@@ -12,6 +12,7 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
+    <script src="./leave_application_files/leave_application.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
 
@@ -158,13 +159,49 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
-                                <textarea rows="5" cols="80" id="noteValue" class="textbox_multi_line"
+                                <textarea rows="5" cols="80" id="noteValue" class="textbox_multi_line"></textarea>
+                                <input type="text" id="stuIDText" class="textbox textbox_295" placeholder="学生学号...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">学生姓名：</span>
+                                <input type="text" id="stuNameText" class="textbox" placeholder="学生姓名...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">请假类型：</span>
+                                <select class="select" id="leaveTypeText">
+                                    <option>因病请假</option>
+                                    <option>因事请假</option>
+                                    <option>固定假期</option>
+                                    <option>其它...</option>
+                                </select>
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">离开日期：</span>
+                                <input type="date" id="startingDateText" class="textbox" placeholder="离开日期...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">结束日期：</span>
+                                <input type="date" id="endingDateText" class="textbox" placeholder="结束日期...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">请假事由：</span>
+                                <textarea rows="10" cols="80" id="issueText" class="textbox_multi_line" placeholder="请输入请假事由(最多可输入1000字)..."
+                                    style="height: 200px"></textarea>
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">备注：</span>
+                                <textarea rows="5" cols="80" id="noteText" class="textbox_multi_line"
                                     placeholder="请输入备注(最多可输入1000字)..."></textarea>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" id="leave_application_submit" class="link_btn">
-                                <script src="submit_test/post_test.js"></script><!--js文件名-->
+                                <input type="submit" id="submitButton" class="link_btn">
                             </li>
                         </ul>
                         </form>

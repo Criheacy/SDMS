@@ -12,6 +12,7 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
+    <script src="./vacation_application_files/vacation_application.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
 
@@ -146,6 +147,23 @@
                                 <select class="select" id="inoutTypeValue">
                                     <option>返校</option>
                                     <option>出校</option>
+                                <input type="text" id="studentIDText" class="textbox textbox_295"
+                                    placeholder="学生学号...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">学生姓名：</span>
+                                <input type="text" id="studentNameText" class="textbox"
+                                    placeholder="学生姓名...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">假期类型：</span>
+                                <select class="select" id="vacaTypeText">
+                                    <option>寒假</option>
+                                    <option>暑假</option>
+                                    <option>法定节假日</option>
+                                    <option>其它...</option>
                                 </select>
                             </li>
                             <li>
@@ -157,16 +175,25 @@
                                 <span class="item_name" style="width:120px;">事由：</span>
                                 <input type="text" id="issueValue" class="textbox" placeholder="事由..."
                                 oninvalid="setCustomValidity('请输入请假事由');" required>
+                                <span class="item_name" style="width:120px;">假期开始日期：</span>
+                                <input type="date" id="vacaStartDateText"
+                                    class="textbox" placeholder="离开日期...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">假期结束日期：</span>
+                                <input type="date" id="vacaEndDateText"
+                                    class="textbox" placeholder="结束日期...">
+                                <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
-                                <textarea rows="5" cols="80" id="noteValue" class="textbox"
+                                <textarea rows="5" cols="80" id="noteText" class="textbox"
                                     placeholder="请输入备注(最多可输入1000字)..."></textarea>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input id="vacation_application_submit" type="submit" class="link_btn">
-                                <script src="submit/vacation_application.js"></script><!--js文件名-->
+                                <input id="submitButton" type="submit" class="link_btn">
                             </li>
                         </ul>
                         </form>

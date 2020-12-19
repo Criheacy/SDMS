@@ -12,6 +12,9 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
+    <script src="./common/text_query_utility.js"></script>
+    <script src="./common/get_query_text_from_html.js"></script>
+    <script src="./outsiders_register_files/vistor_record.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
 
@@ -170,6 +173,55 @@
                                 <span class="item_name" style="width:120px;">离开时间：</span>
                                 <input type="datetime-local" id="leaveDateValue" class="textbox" placeholder="离开时间..."
                                 oninvalid="setCustomValidity('请填写离开时间');" required>
+                                <input type="text" id="visitorName" class="textbox" placeholder="姓名...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">联系方式：</span>
+                                <input type="text" id="contact" class="textbox" placeholder="联系方式...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">来访目的：</span>
+                                <select id="purpose" class="select">
+                                    <option>找学生</option>
+                                    <option>送物品</option>
+                                    <option>参观/审查</option>
+                                    <option>其它...</option>
+                                </select>
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">接触学生学号：</span>
+                                <input type="text" id="stuID" class="textbox" placeholder="接触学生学号...">
+                                <input type="text" id="_stuName" class="textbox" style="width:120px;" disabled="disabled"
+                                    placeholder="（学生姓名）">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">接触宿舍编号：</span>
+                                <input type="text" id="visDormID" class="textbox" placeholder="接触宿舍编号...">
+                                <input type="text" class="textbox" style="width:120px;" disabled="disabled"
+                                    placeholder="（宿舍门牌号）">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">来访时间：</span>
+                                <input type="date" id="arriveTime" class="textbox" placeholder="来访时间...">
+                                <input type="time" class="textbox" placeholder="来访时间...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">离开时间：</span>
+                                <input type="date" id="leaveTime" class="textbox" placeholder="离开时间...">
+                                <input type="time" class="textbox" placeholder="离开时间...">
+                                <span class="errorTips">错误提示信息...</span>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">备注：</span>
+                                <textarea rows="5" cols="80" id="note" class="textbox"
+                                    placeholder="请输入备注(最多可输入1000字)..."></textarea>
+                                <span class="errorTips">错误提示信息...</span>
                             </li>
 
                             <li>
@@ -186,8 +238,7 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" id="outsiders_register_submit" class="link_btn">
-                                <script src="submit_test/post_test.js"></script><!--js文件名-->
+                                <input type="submit" id="submitButton" class="link_btn">
                             </li>
                         </ul>
                         </form>

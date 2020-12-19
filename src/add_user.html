@@ -52,7 +52,7 @@
         <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0"
             style="max-height: none;">
             <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                <h2><a href="./index.html">添加学生宿舍信息 / Add Dormitory Information</a></h2>
+                <h2><a href="./index.html">添加账户信息 / Add user</a></h2>
                 <ul>
                     <li>
                         <dl>
@@ -141,29 +141,28 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">账户类型：</span>
-                                <input type="radio" id="userTypeValue">学生
-                                <input type="radio" id="userTypeValue">管理员
+                                <input type="radio" name="ut" id="userTypeValue" checked="checked">学生
+                                <input type="radio" name="ut" id="userTypeValue">管理员
                              </li>
                             <li>
                                 <span class="item_name" style="width:120px;">是否有修改学生账户信息权限：</span>
-                                <input type="radio" id="EditStuInfoPrivValue">是
-                                <input type="radio" id="EditStuInfoPrivValue">否
+                                <input type="radio" name="esp" id="EditStuInfoPrivValue">是
+                                <input type="radio" name="esp" id="EditStuInfoPrivValue" checked="checked">否
                              </li>
                              <li>
                                 <span class="item_name" style="width:120px;">是否有修改管理员账户信息权限：</span>
-                                <input type="radio" id="EditAdminInfoPrivValue">是
-                                <input type="radio" id="EditAdminInfoPrivValue">否
+                                <input type="radio" name="eap" id="EditAdminInfoPrivValue">是
+                                <input type="radio" name="eap" id="EditAdminInfoPrivValue" checked="checked" >否
                               </li>
                               <li>
                                   <span class="item_name" style="width:120px;">是否有修改本账户信息权限：</span>
-                                  <input type="radio" id="EditSelfInfoPrivValue">是
-                                  <input type="radio" id="EditSelfInfoPrivValue">否
+                                  <input type="radio" name="eep" id="EditSelfInfoPrivValue" checked="checked">是
+                                  <input type="radio" name="eep" id="EditSelfInfoPrivValue">否
                               </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
                                 <input type="submit" id="add_dorm_submit" class="link_btn">
                                 <script src="submit/add_dorm.js"></script><!--js文件名-->
-                                <a class="link_btn" href="./add_dorm.html">继续添加</a>
                             </li>
                         </ul>
                         </form>

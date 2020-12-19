@@ -13,10 +13,14 @@ function getStuNameByStuID(stuID, updateFunc)
 		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
 			var res = httpRequest.responseText;
 			res = JSON.parse(res);
-			console.log(res.data[0]);
-			console.log((res.data[0]).StuName);
 			if (res.code == 1)
+			{
 				updateFunc((res.data[0]).StuName);
+			}
+			else
+			{
+				updateFunc("（学生姓名）");
+			}
 		}
 	};
 }

@@ -7,7 +7,7 @@ window.onload = function ()
 		var arriveTime = document.getElementById("arriveTime").value.toString();
 		var leaveTime = document.getElementById("leaveTime").value.toString();
 		var adminID = document.getElementById("adminID").value.toString();
-		var visStuID = document.getElementById("visStuID").value.toString();
+		var visStuID = document.getElementById("stuID").value.toString();
 		var visDormID = document.getElementById("visDormID").value.toString();
 		var note = document.getElementById("note").value.toString();
 

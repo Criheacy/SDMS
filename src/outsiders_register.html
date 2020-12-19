@@ -12,6 +12,8 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
+    <script src="./common/text_query_utility.js"></script>
+    <script src="./common/get_query_text_from_html.js"></script>
     <script src="./outsiders_register_files/vistor_record.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
@@ -151,16 +153,16 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">接触学生学号：</span>
-                                <input type="text" id="visStuID" class="textbox" placeholder="接触学生学号...">
-                                <input type="text" class="textbox" style="width:120px;" disabled="disabled"
-                                    placeholder="（学生学号）">
+                                <input type="text" id="stuID" class="textbox" placeholder="接触学生学号...">
+                                <input type="text" id="_stuName" class="textbox" style="width:120px;" disabled="disabled"
+                                    placeholder="（学生姓名）">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">接触宿舍编号：</span>
                                 <input type="text" id="visDormID" class="textbox" placeholder="接触宿舍编号...">
                                 <input type="text" class="textbox" style="width:120px;" disabled="disabled"
-                                    placeholder="（宿舍号）">
+                                    placeholder="（宿舍门牌号）">
                                 <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>

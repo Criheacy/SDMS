@@ -68,7 +68,7 @@ small,weak{color:#666}
 .mlr{margin:0 5px;overflow:hidden;}
 .admin_login{width:300px;height:auto;overflow:hidden;margin:10% auto 0 auto;padding:40px;box-shadow:0 -15px 30px #0d957a;border-radius:5px;}
 .admin_login dt{font-size:20px;font-weight:bold;text-align:center;color:#45bda6;text-shadow:0 0 1px #0e947a;margin-bottom:15px;}
-.admin_login dt strong{display:block; color:#9ad3c9}
+.admin_login dt strong{display:block;}
 .admin_login dt em{display:block;font-size:12px;margin-top:8px;}
 .admin_login dd{margin:5px 0;height:42px;overflow:hidden;position:relative;}
 .admin_login dd .login_txtbx{font-size:14px;height:26px;line-height:26px;padding:8px 5%;width:90%;text-indent:2em;border:none;background:#5cbdaa;color:white;}
@@ -77,7 +77,7 @@ small,weak{color:#666}
 .admin_login dd .login_txtbx::-moz-placeholder {color:#f4f4f4;line-height:inherit;}
 .admin_login dd .login_txtbx:focus{background:#55b7a4;}
 .admin_login dd:before{font-family:'adminthemesregular';position:absolute;top:0;left:10px;height:42px;line-height:42px;font-size:20px;color:#0c9076;}
-.admin_login dd.user_icon:before{content:"u"; background-image: image("")}
+.admin_login dd.user_icon:before{content:"u";}
 .admin_login dd.pwd_icon:before{content:"p";}
 .admin_login dd.val_icon:before{content:"n";}
 .admin_login dd .ver_btn{text-align:right;border:none;color:#f4f4f4;height:42px;line-height:42px;margin:0;z-index:1;position:relative;float:right;background:#48bca5;}
@@ -91,7 +91,7 @@ small,weak{color:#666}
 /*header*/
 header{background:#19a97b;overflow:hidden;}
 header h1{margin:0;float:left;margin-left:1%;}
-header h1 img{width:auto;height:70px;}
+header h1 img{width:auto;max-width:300px;height:70px;}
 header .rt_nav{float:right;overflow:hidden;margin-right:3%;margin-top:12px;}
 header .rt_nav li{float:left;padding:0 25px;text-align:center;border-right:1px #139667 solid;}
 header .rt_nav li:last-child{border:none;}

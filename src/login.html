@@ -19,14 +19,27 @@
       position: absolute;
     }
   </style>
-  <script type="text/javascript" src="./login_files/login_query.js"></script>
-  <script src="./login_files/verificationNumbers.js"></script>
   <script src="./login_files/jquery.js"></script>
+  <script src="./login_files/verificationNumbers.js"></script>
   <script src="./login_files/Particleground.js"></script>
+  <script>
+    $(document).ready(function () {
+      //粒子背景特效
+      $('body').particleground({
+        dotColor: '#5cbdaa',
+        lineColor: '#5cbdaa'
+      });
+      //验证码
+      createCode();
+      //测试提交，对接程序删除即可
+      $(".submit_btn").click(function () {
+        location.href = "index.html";
+      });
+    });
+  </script>
 </head>
 
-<body class="body">
-  <canvas class="pg-canvas" width="1920" height="254"></canvas>
+<body><canvas class="pg-canvas" width="1920" height="254"></canvas>
   <dl class="admin_login">
     <dt>
       <strong>学生宿舍管理系统</strong>
@@ -46,7 +59,7 @@
       <input type="button" value="验证码核验" class="ver_btn" onclick="validate();">
     </dd>
     <dd>
-      <input type="button" id="login_info_submit" value="立即登录" class="submit_btn">
+      <input type="button" id="login_submit" value="立即登录" class="submit_btn">
     </dd>
     <dd>
       <p>© 2019-2020 Database Course Design</p>

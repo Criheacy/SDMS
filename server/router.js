@@ -37,6 +37,14 @@ app.get('/s/get_utility/get_student_name', function(req, res) {
 	getUtility.getStuNameByStuID(req, res, connection);
 })
 
+app.get('/s/get_utility/get_building_ID', function(req, res) {
+	getUtility.getRoomIDByDormID(req, res, connection);
+})
+
+app.get('/s/get_utility/get_room_ID', function(req, res) {
+	getUtility.getRoomIDByDormID(req, res, connection);
+})
+
 app.get('/s/student_list', function (req, res) {
 	console.log("QUERY of student list received.");
 	console.log(" >  Handle by studentListHandler.js");

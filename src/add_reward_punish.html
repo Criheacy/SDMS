@@ -13,6 +13,8 @@
 <![endif]-->
     <script src="./common/jquery.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./common/text_query_utility.js"></script>
+    <script src="./common/get_query_text_from_html.js"></script>
     <script>
 
         (function ($) {
@@ -52,7 +54,7 @@
         <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0"
             style="max-height: none;">
             <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                <h2><a href="./index.html">添加配套房间信息 / Add Facility Information</a></h2>
+                <h2><a href="./index.html">添加奖惩信息 / Add reward&punish</a></h2>
                 <ul>
                     <li>
                         <dl>
@@ -69,7 +71,7 @@
                             <dd><a href="./student_list.html">学生信息查询/添加</a></dd>
                             <dd><a href="./dormitory_list.html">学生宿舍信息查询/添加</a></dd>
                              <dd><a href="./dorm_list.html">宿舍信息查询/添加</a></dd>
-                             <dd><a href="./facility_list.html" class="active">配套房间信息查询/添加</a></dd>
+                             <dd><a href="./facility_list.html">配套房间信息查询/添加</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -94,7 +96,7 @@
                         <dl>
                             <dt>宿舍奖惩</dt>
                             <dd><a href="./reward_punish_list.html">查看奖惩记录</a></dd>
-                            <dd><a href="./add_reward_punish.html">奖惩信息登记</a></dd>
+                            <dd><a href="./add_reward_punish.html" class="active">奖惩信息登记</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -134,46 +136,43 @@
                 dir="ltr">
                 <div class="rt_content">
                     <div class="page_title">
-                        <h2 class="fl">添加宿舍信息</h2>
+                        <h2 class="fl">添加奖惩信息</h2>
+                        <a class="fr top_rt_btn" href="./reward_punish_list.html">查询奖惩记录</a>
                     </div>
                     <section>
+                        <form>
                         <ul class="ulColumn2">
                             <li>
-                                <span class="item_name" style="width:120px;">配套房间号：</span>
-                                <input type="text" id="faciRoomIDValue" class="textbox textbox_295" placeholder="配套房间号..."
-                                 oninvalid="setCustomValidity('请输入配套房间号');" required>
-                                <span class="errorTips">错误提示信息...</span>
+                                <span class="item_name" style="width:120px;">宿舍号：</span>
+                                <input type="text" id="dormID" class="textbox textbox_295" placeholder="宿舍号..."
+                                oninvalid="setCustomValidity('请输入宿舍号');" required>
+                                <input type="text" id="buildingID" class="textbox" style="width:120px;" disabled="disabled" placeholder="（宿舍楼）">
+                                <input type="text" id="roomID" id="" class="textbox" style="width:120px;" disabled="disabled" placeholder="（宿舍号）">
                             </li>
                             <li>
-                                <span class="item_name" style="width:120px;">楼号：</span>
-                                <input type="text" id="buildingIDValue" class="textbox textbox_295" placeholder="楼号..."
-                                 oninvalid="setCustomValidity('请输入楼号');" required>
-                                <span class="errorTips">错误提示信息...</span>
+                                <span class="item_name" style="width:120px;">奖惩类型：</span>
+                                <select class="select" id="inoutTypeValue">
+                                    <option>奖励</option>
+                                    <option>惩罚</option>
+                                </select>
                             </li>
-                             <li>
-                                <span class="item_name" style="width:120px;">房间类型：</span>
-                                <input type="text" id="faciTypeValue" class="textbox textbox_295" placeholder="房间类型..."
-                                 oninvalid="setCustomValidity('请输入房间类型');" required>
-                                <span class="errorTips">错误提示信息...</span>
+                            <li>
+                                <span class="item_name" style="width:120px;">登记日期：</span>
+                                <input type="date" id="recTimeValue"  class="textbox" placeholder="登记日期..."
+                                oninvalid="setCustomValidity('请填写登记日期');" required>
                             </li>
-                             <li>
-                                <span class="item_name" style="width:120px;">楼层：</span>
-                                <input type="text" id="floorIDValue" class="textbox textbox_295" placeholder="楼层..."
-                                 pattern="^.{1}$" oninvalid="setCustomValidity('请输入楼层');" required>
-                                <span class="errorTips">错误提示信息...</span>
+                            <li>
+                                <span class="item_name" style="width:120px;">事由(原因)：</span>
+                                <input type="text" id="issueValue" class="textbox" placeholder="事由..."
+                                oninvalid="setCustomValidity('请输入请假事由');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
                                 <textarea rows="5" cols="80" id="noteValue" class="textbox"
                                     placeholder="请输入备注(最多可输入1000字)..."></textarea>
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" id="add_facility_submit" class="link_btn">
-                                <script src="submit/add_facility.js"></script><!--js文件名-->
                             </li>
                         </ul>
+                        </form>
                     </section>
                 </div>
             </div>

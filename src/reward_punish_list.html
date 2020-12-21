@@ -5,7 +5,7 @@
 <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-     <title>报修记录</title>
+     <title>后台管理系统</title>
      <meta name="author" content="DeathGhost">
      <link rel="stylesheet" type="text/css" href="./common/style.css">
      <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
           <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0"
                style="max-height: none;">
                <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                    <h2><a href="./index.html">报修记录 / Repairment List</a></h2>
+                    <h2><a href="./index.html">奖惩信息表 / reward&punish List</a></h2>
                     <ul>
                          <li>
                               <dl>
@@ -93,14 +93,14 @@
                          <li>
                               <dl>
                                   <dt>宿舍奖惩</dt>
-                                  <dd><a href="./reward_punish_list.html">查看奖惩记录</a></dd>
+                                  <dd><a href="./reward_punish_list.html" class="active">查看奖惩记录</a></dd>
                                   <dd><a href="./add_reward_punish.html">奖惩信息登记</a></dd>
                               </dl>
                           </li>
                          <li>
                               <dl>
                                    <dt>报修管理</dt>
-                                   <dd><a href="./repairment_list.html" class="active">查看报修记录</a></dd>
+                                   <dd><a href="./repairment_list.html">查看报修记录</a></dd>
                               </dl>
                          </li>
                          <li>
@@ -135,29 +135,19 @@
                     style="position:relative; top:0; left:0;" dir="ltr">
                     <div class="rt_content">
                          <div class="page_title">
-                              <h2 class="fl">检查分数列表</h2>
+                              <h2 class="fl">奖惩记录列表</h2>
                          </div>
-                         <section class="mtb">
-                              <input type="text" class="textbox textbox_225" placeholder="宿舍编号查询...">
+                         <section>
+                         <div class="dropdown">
+                              <input type="text" class="textbox textbox_225" placeholder="模糊查询...">
                               <input type="button" value="查询" class="group_btn">
+                              <div class="dropdown-content">
+                                   <input type="text" class="textbox textbox_225" placeholder="输入宿舍号查询..."><br>
+                                   <input type="text" class="textbox textbox_225" placeholder="输入奖惩类型查询..."><br>
+                                   <input type="text" class="textbox textbox_225" placeholder="输入登记日期查询..."><br>
+                               </div>
+                         </div>
                          </section>
-                         <table class="table">
-                              <tbody>
-                                   <tr><th width="20%">宿舍编号</th><td class="center">S2-B345</td></tr>
-                                   <tr><th>报修时间</th><td class="center">2020-11-29 12:30</td></tr>
-                                   <tr><th>内容说明</th><td class="center">我们的宿舍楼塌了，快来抢修！</td></tr>
-                                   <tr><th>是否已维修完成</th><td class="center">是</td></tr>
-                                   <tr><th>报修回复</th>
-                                        <td>
-                                        <textarea rows="10" cols="300" id="noteValue" class="textbox_multi_line" placeholder="请输入报修回复(最多可输入1000字)..."
-                                         style="height: 200px"></textarea>
-                                          <span class="item_name" style="width:120px;margin-left:550px;margin-top:50px;"></span>
-                                          <input type="submit" id="repairment_list_submit" class="link_btn">
-                                          <script src="submit/repairment_list.js"></script><!--js文件名-->
-                                        </td>
-                                   </tr>
-                              </tbody>
-                         </table>
                     </div>
                </div>
                <div id="mCSB_2_scrollbar_vertical"

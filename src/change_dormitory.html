@@ -30,7 +30,8 @@
                         $(".content").mCustomScrollbar("scrollTo", "h2:last");
                     });
                 });
-                $(".content").delegate("a[href='top']", "click", function (e) {
+
+看                  $(".content").delegate("a[href='top']", "click", function (e) {
                     e.preventDefault();
                     $(".content").mCustomScrollbar("scrollTo", $(this).attr("href"));
                 });
@@ -94,9 +95,15 @@
                     </li>
                     <li>
                         <dl>
+                            <dt>宿舍奖惩</dt>
+                            <dd><a href="./reward_punish_list.html">查看奖惩记录</a></dd>
+                            <dd><a href="./add_reward_punish.html">奖惩信息登记</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
                             <dt>报修管理</dt>
                             <dd><a href="./repairment_list.html">查看报修记录</a></dd>
-                            <dd><a>报修人员联系</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -138,65 +145,24 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
-                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号..."
+                                <input type="text" id="stuID" class="textbox textbox_295" placeholder="学生学号..."
                                 pattern="^.{12}$" oninvalid="setCustomValidity('请输入12位学号');" required>
-                                <input type="text" class="textbox" style="width:120px;" disabled="disabled" placeholder="（学生姓名）">
+                                <input type="text" id="_stuName" class="textbox" style="width:120px;" disabled="disabled" placeholder="（学生姓名）">
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">更换日期：</span>
-                                <input type="date" id="dateValue" class="textbox" placeholder="更换日期..." required
+                                <input type="date" id="recTime" class="textbox" placeholder="更换日期..." required
                                 oninvalid="setCustomValidity('请填写更换日期');">
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">原宿舍编号：</span>
-                                <input type="text" id="preDormIDValue" class="textbox" placeholder="原宿舍编号..." required
+                                <input type="text" id="preDormID" class="textbox" placeholder="原宿舍编号..." required
                                 oninvalid="setCustomValidity('请填写原宿舍编号');">
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">新宿舍编号：</span>
-                                <input type="text" id="aftDormIDValue" class="textbox" placeholder="新宿舍编号..." required
+                                <input type="text" id="aftDormID" class="textbox" placeholder="新宿舍编号..." required
                                 oninvalid="setCustomValidity('请填写新宿舍编号');">
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">备注：</span>
-                                <textarea rows="5" cols="80" id="noteValue" class="textbox_multi_line"
-                                <input type="text" id="stuID" class="textbox textbox_295" placeholder="学生学号...">
-                                <input type="text" id="_stuName" class="textbox" value="（学生姓名）" disabled="disabled">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">更换类型：</span>
-                                <select class="select">
-                                    <option>永久更换</option>
-                                    <option>临时更换</option>
-                                    <option>其它...</option>
-                                </select>
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">更换日期：</span>
-                                <input type="date" id="recDate" class="textbox" placeholder="离开日期...">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">原宿舍编号：</span>
-                                <input type="text" id="preDormID" class="textbox" placeholder="原宿舍编号...">
-                                <input type="text" class="textbox" style="width:70px" value="（宿舍楼）" disabled="disabled">
-                                <input type="text" class="textbox" value="（宿舍门牌号）" disabled="disabled">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">新宿舍编号：</span>
-                                <input type="text" id="aftDormID" class="textbox" placeholder="新宿舍编号...">
-                                <input type="text" class="textbox" style="width:70px" value="（宿舍楼）" disabled="disabled">
-                                <input type="text" class="textbox" value="（宿舍门牌号）" disabled="disabled">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">更换原因：</span>
-                                <textarea rows="10" cols="80" id="issue" class="textbox_multi_line" placeholder="请输入请假事由(最多可输入1000字)..."
-                                    style="height: 200px"></textarea>
-                                <span class="errorTips">错误提示信息...</span>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
@@ -205,7 +171,8 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" id="submitButton" class="link_btn">
+                                <input type="submit" id="change_dormitory_submit" class="link_btn">
+                                <script src="change_dormitory_files/change_dormitory.js"></script><!--js文件名-->
                             </li>
                         </ul>
                         </form>

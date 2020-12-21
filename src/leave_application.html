@@ -12,8 +12,9 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
-    <script src="./leave_application_files/leave_application.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./common/text_query_utility.js"></script>
+    <script src="./common/get_query_text_from_html.js"></script>
     <script>
 
         (function ($) {
@@ -93,9 +94,15 @@
                     </li>
                     <li>
                         <dl>
+                            <dt>宿舍奖惩</dt>
+                            <dd><a href="./reward_punish_list.html">查看奖惩记录</a></dd>
+                            <dd><a href="./add_reward_punish.html">奖惩信息登记</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
                             <dt>报修管理</dt>
                             <dd><a href="./repairment_list.html">查看报修记录</a></dd>
-                            <dd><a>报修人员联系</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -137,10 +144,10 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
-                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号..."
+                                <input type="text" id="stuID" class="textbox textbox_295" placeholder="学生学号..."
                                 pattern="^.{12}$" oninvalid="setCustomValidity('请输入12位学号');" required>
                                 <input type="text" class="textbox" style="width:120px;" disabled="disabled"
-                                    placeholder="（学生姓名）">
+                                id="_stuName" placeholder="（学生姓名）">
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">请假日期：</span>
@@ -159,49 +166,13 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>
-                                <textarea rows="5" cols="80" id="noteValue" class="textbox_multi_line"></textarea>
-                                <input type="text" id="stuIDText" class="textbox textbox_295" placeholder="学生学号...">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">学生姓名：</span>
-                                <input type="text" id="stuNameText" class="textbox" placeholder="学生姓名...">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">请假类型：</span>
-                                <select class="select" id="leaveTypeText">
-                                    <option>因病请假</option>
-                                    <option>因事请假</option>
-                                    <option>固定假期</option>
-                                    <option>其它...</option>
-                                </select>
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">离开日期：</span>
-                                <input type="date" id="startingDateText" class="textbox" placeholder="离开日期...">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">结束日期：</span>
-                                <input type="date" id="endingDateText" class="textbox" placeholder="结束日期...">
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">请假事由：</span>
-                                <textarea rows="10" cols="80" id="issueText" class="textbox_multi_line" placeholder="请输入请假事由(最多可输入1000字)..."
-                                    style="height: 200px"></textarea>
-                                <span class="errorTips">错误提示信息...</span>
-                            </li>
-                            <li>
-                                <span class="item_name" style="width:120px;">备注：</span>
-                                <textarea rows="5" cols="80" id="noteText" class="textbox_multi_line"
+                                <textarea rows="5" cols="80" id="noteValue" class="textbox_multi_line"
                                     placeholder="请输入备注(最多可输入1000字)..."></textarea>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" id="submitButton" class="link_btn">
+                                <input type="submit" id="leave_application_submit" class="link_btn">
+                                <script src="submit_test/post_test.js"></script><!--js文件名-->
                             </li>
                         </ul>
                         </form>

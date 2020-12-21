@@ -13,6 +13,8 @@
 <![endif]-->
     <script src="./common/jquery.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./common/text_query_utility.js"></script>
+    <script src="./common/get_query_text_from_html.js"></script>
     <script>
 
         (function ($) {
@@ -92,9 +94,15 @@
                     </li>
                     <li>
                         <dl>
+                            <dt>宿舍奖惩</dt>
+                            <dd><a href="./reward_punish_list.html">查看奖惩记录</a></dd>
+                            <dd><a href="./add_reward_punish.html">奖惩信息登记</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
                             <dt>报修管理</dt>
                             <dd><a href="./repairment_list.html">查看报修记录</a></dd>
-                            <dd><a>报修人员联系</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -157,8 +165,6 @@
                                 <span class="item_name" style="width:120px;">检查负责人工号：</span>
                                 <input type="text" id="administratorIDValue" class="textbox" placeholder="检查负责人工号..."
                                 oninvalid="setCustomValidity('请填写检查负责人工号');" required>
-                                <input type="text" class="textbox" style="width:120px;" disabled="disabled"
-                                    placeholder="（检查负责人姓名）">
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">备注：</span>

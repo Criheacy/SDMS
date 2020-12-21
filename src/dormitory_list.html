@@ -12,6 +12,8 @@
 <script src="js/html5.js"></script>
 <![endif]-->
      <script src="./common/jquery.js"></script>
+     <script src="./common/json2html.js"></script>
+     <script src="./dormitory_list_files/dormitory_list_query.js"></script>
      <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
      <script>
 
@@ -134,13 +136,15 @@
                          </div>
                          <section>
                          <div class="dropdown">
-                              <input type="text" class="textbox textbox_225" placeholder="模糊查询...">
-                              <input type="button" value="查询" class="group_btn">
+                              <input type="text" id="queryText" class="textbox textbox_225" placeholder="模糊查询...">
+                              <input type="button" id="queryButton" value="查询" class="group_btn">
                               <div class="dropdown-content">
                                    <input type="text" class="textbox textbox_225" placeholder="输入学号查询..."><br>
                                    <input type="text" class="textbox textbox_225" placeholder="输入宿舍号查询..."><br>
                                    <input type="text" class="textbox textbox_225" placeholder="输入床号查询..."><br>
                               </div>
+                         </div>
+                         <div id="dormitory_list_table">
                          </div>
                          </section>
                     </div>

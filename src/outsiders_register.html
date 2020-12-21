@@ -12,6 +12,9 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
+    <script src="./common/text_query_utility.js"></script>
+    <script src="./common/get_query_text_from_html.js"></script>
+    <script src="./outsiders_register_files/vistor_record.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
 
@@ -136,45 +139,55 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">姓名：</span>
-                                <input type="text" id="nameValue" class="textbox" placeholder="姓名..."
+                                <input type="text" id="visitorName" class="textbox" placeholder="姓名..."
                                 oninvalid="setCustomValidity('请输入姓名');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">联系方式：</span>
-                                <input type="text" id="contactValue" class="textbox" placeholder="联系方式..."
+                                <input type="text" id="contact" class="textbox" placeholder="联系方式..."
                                 oninvalid="setCustomValidity('请输入联系方式');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">来访目的：</span>
-                                <input type="text" id="issueValue" class="textbox" placeholder="来访目的..."
-                                oninvalid="setCustomValidity('请输入来访目的');" required>
+                                <select id="purpose" class="select">
+                                    <option>找学生</option>
+                                    <option>送物品</option>
+                                    <option>参观/审查</option>
+                                    <option>其它...</option>
+                                </select>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">接触学生学号：</span>
-                                <input type="text" id="studentIDValue" class="textbox" placeholder="接触学生学号..."
+                                <input type="text" id="stuID" class="textbox" placeholder="接触学生学号..."
                                 pattern="^.{12}$" oninvalid="setCustomValidity('请输入12位学号');" required>
-                                <input type="text" class="textbox" style="width:120px;" disabled="disabled"
+                                <input type="text" id="_stuName" class="textbox" style="width:120px;" disabled="disabled"
                                     placeholder="（接触学生姓名）">
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">接触学生宿舍号：</span>
-                                <input type="text" id="dormitoryIDValue" class="textbox" placeholder="接触学生宿舍号..."
+                                <input type="text" id="visDormID" class="textbox" placeholder="接触学生宿舍号..."
                                 oninvalid="setCustomValidity('请输入宿舍号');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">来访时间：</span>
-                                <input type="datetime-local" id="arriveDateValue" class="textbox" placeholder="来访时间..."
+                                <input type="datetime-local" id="arriveTime" class="textbox" placeholder="来访时间..."
                                 oninvalid="setCustomValidity('请填写来访时间');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">离开时间：</span>
-                                <input type="datetime-local" id="leaveDateValue" class="textbox" placeholder="离开时间..."
+                                <input type="datetime-local" id="leaveTime" class="textbox" placeholder="离开时间..."
                                 oninvalid="setCustomValidity('请填写离开时间');" required>
+                            </li>
+                            <li>
+                                <span class="item_name" style="width:120px;">备注：</span>
+                                <textarea rows="5" cols="80" id="note" class="textbox"
+                                    placeholder="请输入备注(最多可输入1000字)..."></textarea>
+                                <span class="errorTips">错误提示信息...</span>
                             </li>
 
                             <li>
                                 <span class="item_name" style="width:120px;">值班人员工号：</span>
-                                <input type="text" id="asministratorIDValue" class="textbox" placeholder="值班人员工号..."
+                                <input type="text" id="adminID" class="textbox" placeholder="值班人员工号..."
                                 oninvalid="setCustomValidity('请输入值班人员工号');" required>
                                 <input type="text" class="textbox" style="width:120px;" disabled="disabled"
                                     placeholder="（值班人员姓名）">
@@ -186,8 +199,7 @@
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" id="outsiders_register_submit" class="link_btn">
-                                <script src="submit_test/post_test.js"></script><!--js文件名-->
+                                <input type="submit" id="submitButton" class="link_btn">
                             </li>
                         </ul>
                         </form>

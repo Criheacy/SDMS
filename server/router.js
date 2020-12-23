@@ -87,7 +87,11 @@ app.get('/s/add_dormitory', function (req, res) {
 	console.log(" >  Handle by affairsUtility.js");
 	affairsUtility.aAddDormitoryStudent(req, res, connection);
 });
-
+app.get('/s/add_facility', function (req, res) {
+	console.log("INSERT of visitor record received.");
+	console.log(" >  Handle by affairsUtility.js");
+	affairsUtility.aAddDormitoryStudent(req, res, connection);
+});
 app.post('', function (req, res) {
     var params;
     req.on('data', function(data) {

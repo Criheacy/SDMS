@@ -141,11 +141,11 @@ module.exports = {
 			"INSERT INTO STUDENT_INFO ( \
 				StuID, Stuname, StuMajor, StuClass, StuGrade\
 			) VALUES ('"
-			+ req.query.StuID + "', '"
-			+ req.query.StuName+ "', '"
-			+ req.query.StuMajor + "', '"
-			+ req.query.StuClass + "', '"
-			+ req.query.StuGrade + "');";
+			+ req.query.stuID + "', '"
+			+ req.query.stuName+ "', '"
+			+ req.query.stuMajor + "', '"
+			+ req.query.stuClass + "', '"
+			+ req.query.stuGrade + "');";
 
 	//		addSqlParams = [req.query.queryText];
 
@@ -185,10 +185,10 @@ module.exports = {
 			"INSERT INTO DORMITORY_INFO ( \
 				 DormID, BuildingID,FloorID,RoomID\
 			) VALUES ('"
-			+ req.query.DormID + "', '"
-			+ req.query.BuildingID+ "', '"
-			+ req.query.FloorID + "', '"
-			+ req.query.RoomID + "');";
+			+ req.query.dormID + "', '"
+			+ req.query.buildingID+ "', '"
+			+ req.query.floorID + "', '"
+			+ req.query.roomID + "');";
 
 	//		addSqlParams = [req.query.queryText];
 
@@ -228,10 +228,10 @@ module.exports = {
 			"INSERT INTO STUDENT_DORMITORY_INFO ( \
 				StuID, DormID, BedID, IsHeader\
 			) VALUES ('"
-			+ req.query.StuID + "', '"
-			+ req.query.DormID+ "', '"
-			+ req.query.BedID + "', '"
-			+ req.query.IsHeader + "');";
+			+ req.query.stuID + "', '"
+			+ req.query.dormID+ "', '"
+			+ req.query.bedID + "', '"
+			+ req.query.isHeader + "');";
 
 	//		addSqlParams = [req.query.queryText];
 

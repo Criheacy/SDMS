@@ -133,6 +133,50 @@ module.exports = {
 			};
 		});
 	},
+	aAddStudent: function(req, res, connection) {
+		console.log(req.query);
+
+		let [addSql,addSqlParams] = ['',[]];
+		addSql = 
+			"INSERT INTO STUDENT_INFO ( \
+				StuID, Stuname, StuMajor, StuClass, StuGrade\
+			) VALUES ('"
+			+ req.query.StuID + "', '"
+			+ req.query.StuName+ "', '"
+			+ req.query.StuMajor + "', '"
+			+ req.query.StuClass + "', '"
+			+ req.query.StuGrade + "');";
+
+	//		addSqlParams = [req.query.queryText];
+
+		console.log(addSql);
+		console.log(addSqlParams);
+
+		connection.query(addSql,addSqlParams,function (err, result) {
+			if (err) {
+				console.log('[QUERY ERROR] - ',err.message);
+				return;
+			}
+			console.log(result);
+			if (result.length) {
+				let params = {
+					code:1,
+					message:"success",
+					data:result
+				};
+				res.json(params);
+				res.end();
+			}
+			else {
+				let params = {
+					code:0,
+					message:"no data found"
+				};
+				res.json(params);
+				res.end();
+			};
+		});
+	},
 
 	aVisitorRecord: function(req, res, connection) {
 		console.log(req.query);

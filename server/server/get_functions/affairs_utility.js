@@ -185,10 +185,10 @@ module.exports = {
 			"INSERT INTO DORMITORY_INFO ( \
 				 DormID, BuildingID,FloorID,RoomID\
 			) VALUES ('"
-			+ req.query.StuID + "', '"
-			+ req.query.DormID+ "', '"
-			+ req.query.BedID + "', '"
-			+ req.query.IsHeader + "');";
+			+ req.query.DormID + "', '"
+			+ req.query.BuildingID+ "', '"
+			+ req.query.FloorID + "', '"
+			+ req.query.RoomID + "');";
 
 	//		addSqlParams = [req.query.queryText];
 

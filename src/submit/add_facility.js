@@ -1,30 +1,33 @@
-document.getElementById("add_facility_submit").onclick = function()
+window.onload = function ()
 {
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.open('POST', 'http://localhost:8080/', true);
-    httpRequest.setRequestHeader("Content-type", "application/json");
-    const obj =
-    {
-        "FaciRoomID" : document.getElementById("faciRoomIDValue").value,
-        "BuildingID" : document.getElementById("buildingIDValue").value,
-        "FaciType" : document.getElementById("faciTypeValue").value,
-        "FloorID" : document.getElementById("floorIDValue").value,
-        "Note" : document.getElementById("noteValue").value,
-    };
-    alert(obj);
-    console.log(obj);
+	document.getElementById("submitButton").onclick = function ()
+	{
+		var FaciRoomID = document.getElementById("faciRoomIDValue").value.toString();
+		var BuildingID = document.getElementById("buildingIDValue").value.toString();
+		var FaciType = document.getElementById("faciTypeValueD").value.toString();
+		var FloorID = document.getElementById("floorValue").value.toString();
+		var Note = document.getElementById("noteValue").value.toString();
 
-    httpRequest.send(JSON.stringify(obj));
+		var httpRequest = new XMLHttpRequest();
 
-    alert(JSON.stringify(obj));
-    console.log(JSON.stringify(obj));
+		var url = 'http://localhost:8080' + '/s/add_facility?'
+				+ 'FaciRoomID=' + FaciRoomID + '&BuildingID=' + BuildingID
+				+ '&FaciType=' + FaciType
+				+ '&FloorID=' + FloorID + '&Note=' + Note;
+		console.log(url);
 
-    httpRequest.onreadystatechange = function ()
-    {
-        if (httpRequest.readyState == 4 && httpRequest.status == 200)
-        {
-            var json = httpRequest.responseText;
-            console.log(json);
-        }
-    };
+		httpRequest.open('GET', url, true);
+		httpRequest.send();
+		
+		httpRequest.onreadystatechange = function () {
+			if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+				var res = httpRequest.responseText;
+				console.log(res);
+				res = JSON.parse(res);
+				console.log(res.code);
+				if (res.code == 1)
+					alert("请假申请添加成功！");
+			}
+		};
+	}
 }

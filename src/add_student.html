@@ -12,13 +12,12 @@
 <script src="js/html5.js"></script>
 <![endif]-->
     <script src="./common/jquery.js"></script>
+    <script src="./submit/add_student.js"></script>
     <script src="./common/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="./submit/add_student2.js"></script>
     <script>
 
         (function ($) {
             $(window).load(function () {
-
                 $("a[rel='load-content']").click(function (e) {
                     e.preventDefault();
                     var url = $(this).attr("href");
@@ -28,12 +27,6 @@
                         $(".content").mCustomScrollbar("scrollTo", "h2:last");
                     });
                 });
-
-看                  $(".content").delegate("a[href='top']", "click", function (e) {
-                    e.preventDefault();
-                    $(".content").mCustomScrollbar("scrollTo", $(this).attr("href"));
-                });
-
             });
         })(jQuery);
     </script>
@@ -136,33 +129,32 @@
                         <ul class="ulColumn2">
                             <li>
                                 <span class="item_name" style="width:120px;">学生学号：</span>
-                                <input type="text" id="studentIDValue" class="textbox textbox_295" placeholder="学生学号..."
+                                <input type="text" id="stuID" class="textbox textbox_295" placeholder="学生学号..."
                                 pattern="^.{12}$" oninvalid="setCustomValidity('请输入12位学号');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">学生姓名：</span>
-                                <input type="text" id="studentNameValue" class="textbox textbox_295" placeholder="学生姓名..."
+                                <input type="text" id="stuName" class="textbox textbox_295" placeholder="学生姓名..."
                                 oninvalid="setCustomValidity('请输入姓名');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">学院：</span>
-                                <input type="text" id="majorValue" class="textbox textbox_295" placeholder="学院..."
+                                <input type="text" id="stuMajor" class="textbox textbox_295" placeholder="学院..."
                                 oninvalid="setCustomValidity('请输入学院');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">年级：</span>
-                                <input type="text" id="gradeValue" class="textbox textbox_295" placeholder="年级..."
+                                <input type="text" id="stuGrade" class="textbox textbox_295" placeholder="年级..."
                                 pattern="^.{4}$" oninvalid="setCustomValidity('请输入年级');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;">班级：</span>
-                                <input type="text" id="classValue" class="textbox textbox_295" placeholder="班级..."
+                                <input type="text" id="stuClass" class="textbox textbox_295" placeholder="班级..."
                                 oninvalid="setCustomValidity('请输入班级');" required>
                             </li>
                             <li>
                                 <span class="item_name" style="width:120px;"></span>
-                                <input type="submit" id="add_student_submit" class="link_btn">
-                                <script src="submit/add_student.js"></script><!--js文件名-->
+                                <input type="submit" id="submitButton" class="link_btn">
                             </li>
                         </ul>
                         </form>
